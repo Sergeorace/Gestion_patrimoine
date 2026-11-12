@@ -1,0 +1,28 @@
+%% Cas d'utilisation - Module Authentification et gestion des acces (auth-service)
+flowchart LR
+    subgraph Acteurs
+        TOUT["Tout utilisateur"]
+        ADMIN[Administrateur systeme]
+    end
+
+    subgraph AuthService["auth-service"]
+        CU01[CU-01 S'authentifier]
+        CU01a[Verrouillage apres echecs]
+        CU01b[Double authentification 2FA]
+        CU01c[Reinitialisation mot de passe]
+        CU02[CU-02 Gerer utilisateurs et roles]
+        CU02a[Creer / modifier / desactiver un compte]
+        CU02b[Attribuer roles et permissions RBAC]
+        CU02c[Rattacher a une structure]
+        CU02d[Consulter journal des connexions]
+    end
+
+    TOUT --> CU01
+    CU01 --> CU01a
+    CU01 --> CU01b
+    CU01 --> CU01c
+    ADMIN --> CU02
+    CU02 --> CU02a
+    CU02 --> CU02b
+    CU02 --> CU02c
+    CU02 --> CU02d

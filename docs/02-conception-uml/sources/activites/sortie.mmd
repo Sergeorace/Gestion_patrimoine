@@ -1,0 +1,25 @@
+%% Diagramme d'activite - Sortie d'un bien du patrimoine
+flowchart TD
+    A([Debut : demande de sortie]) --> B[Selection motif : reforme / cession / rebut / perte / vol / destruction]
+    B --> C[Saisie motif + joint pieces justificatives]
+    C --> D[movement-service : INSERT demande En attente]
+    D --> E[Notification gestionnaire central]
+    E --> F{Validation ?}
+    F -- Rejet --> F1[Motif rejet + notification]
+    F1 --> Z1([Fin : rejetee])
+    F -- Approbation --> G[Verification etat physique du bien]
+    G --> H{PV de sortie etabli ?}
+    H -- Non --> H1[Blocage : PV obligatoire]
+    H1 --> C
+    H -- Oui --> I[asset-service : statut = Sorti RG-04]
+    I --> J[Bien non modifiable - consultation historisee]
+    J --> K[valuation-service : arret amortissement / VNC finale]
+    K --> L[movement_db : execution + date_effet]
+    L --> M[document-service : archivage PV et titres]
+    M --> N[journal d'audit RG-07]
+    N --> O[Evenement RabbitMQ : bien sorti]
+    O --> P[Notifications : comptable, structure, audit]
+    P --> Q([Fin : bien sorti du patrimoine])
+
+    style Z1 fill:#fdd
+    style Q fill:#dfd

@@ -1,0 +1,15 @@
+%% Diagramme d'objets - Exemple d'instances : affectation d'un vehicule
+%% (Mermaid ne supporte pas le diagramme d'objets UML natif : representation par flux d'instances)
+flowchart LR
+    subgraph Instances["Instances du domaine"]
+        A1["bien:Land Cruiser<br/>code=PAT-2026-000123<br/>etat=Affecte<br/>structure=MIN-DEF<br/>valeur=45 000 000 FCFA"]
+        A2["bien:Bureau direction<br/>code=PAT-2026-000456<br/>etat=Disponible<br/>structure=MIN-ECON<br/>valeur=150 000 FCFA"]
+        M1["mouvement:mvt-889<br/>type=Affectation<br/>statut=Executee<br/>MIN-ECON -> MIN-DEF<br/>dateEffet=2026-11-10"]
+        S1["structure:MIN-DEF<br/>Ministere de la Defense"]
+        ST1["site:SITE-LOME-CENTRAL<br/>Lome / Lome"]
+    end
+
+    M1 -->|"concerne"| A1
+    M1 -->|"destinataire"| S1
+    A1 -->|"localise a"| ST1
+    M1 -.->|"precedent mouvement"| A2

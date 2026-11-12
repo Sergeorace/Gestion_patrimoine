@@ -1,0 +1,45 @@
+%% Diagramme de classes - notification-service (notification_db)
+classDiagram
+    class Notification {
+        +uuid id
+        +uuid utilisateurId
+        +string type
+        +string canal
+        +string titre
+        +text message
+        +string entiteType
+        +uuid entiteId
+        +boolean lue
+        +datetime lueLe
+        +datetime envoyeeLe
+        +timestamps
+    }
+    class AuditLog {
+        +uuid id
+        +uuid utilisateurId
+        +string serviceSource
+        +string action
+        +string entite
+        +uuid entiteId
+        +jsonb avant
+        +jsonb apres
+        +string ip
+        +string userAgent
+        +datetime date
+    }
+    class AbonnementEvenement {
+        +uuid id
+        +string evenement
+        +string serviceConsommateur
+        +boolean actif
+    }
+    class ModeleEmail {
+        +uuid id
+        +string code UK
+        +string sujet
+        +text corps
+        +boolean actif
+    }
+
+    Notification --> AbonnementEvenement : generee par evenement
+    AuditLog ..> Notification : journalise actions sensibles

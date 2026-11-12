@@ -1,0 +1,429 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R ] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2740 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+(PROPOSITION FINANCIèRE — PLATEFORME DE GESTION DU PATRIMOINE DE L'ÉTAT TOGOLAIS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Document  Proposition financière détaillée \(Étape 4\)) Tj
+T*
+(Version  1.0) Tj
+T*
+(Date  12 novembre 2026) Tj
+T*
+(Devise  FCFA \(XOF\) — montants hors taxes, hors matériel) Tj
+T*
+(Base  Cahier des charges v1.0, S12 et S13) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. SYNTHèSE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Poste  Montant \(FCFA\)) Tj
+T*
+(Prestations de développement \(229 jours-homme\)  6 870 000) Tj
+T*
+(Provision pour imprévus et évolutions mineures \(10 %\)  687 000) Tj
+T*
+(Outils, licences et hébergement de recette \(forfait projet\)  600 000) Tj
+T*
+(TOTAL GÉNÉRAL ESTIMÉ \(hors taxes\)  8 157 000) Tj
+T*
+() Tj
+T*
+(Taux journalier unique : 30 000 FCFA / jour-homme, applicable à tous les profils.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2. ÉQUIPE ET CAPACITé DE PRODUCTION) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Le projet est réalisé en 6 semaines en méthode agile \(sprints d'une semaine\). Un intervenant à temps ) Tj
+T*
+(plein fournit 5 jours-homme/semaine, soit 30 jours-homme sur la durée. Le volume de 229 jours-homme ) Tj
+T*
+(exige une équipe de 9 intervenants \(capacité 270 j-h, taux d'occupation ~85 %, marge ~15 % pour aléas et ) Tj
+T*
+(coordination\).) Tj
+T*
+() Tj
+T*
+(Profil  Responsabilités  Jours-homme  Occupation) Tj
+T*
+(Concepteur et chef de projet \(CHAOLD Komi Serge\)  Analyse, UML, pilotage, documentation, guide  30  100 %) Tj
+T*
+(Designer UI/UX et intégrateur front-end  Maquettes Figma, design system, écrans  27  90 %) Tj
+T*
+(Ingénieur DevOps et architecte  API Gateway, auth, Docker, CI/CD  23  77 %) Tj
+T*
+(Développeur back-end 1  Service patrimoine \(biens\)  25  83 %) Tj
+T*
+(Développeur back-end 2  Organisation, mouvements, maintenance  30  100 %) Tj
+T*
+(Développeur back-end 3  Inventaire et valorisation  27  90 %) Tj
+T*
+(Développeur back-end 4  Reporting et documents  23  77 %) Tj
+T*
+(Développeur front-end  Interface web + notifications  23  77 %) Tj
+T*
+(Testeur QA / déploiement  Tests, recette, formation, production  21  70 %) Tj
+T*
+(Total  229) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(3. DéCOUPAGE EN LOTS ET CHIFFRAGE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Chaque lot correspond à un ou plusieurs micro-services et à une ou plusieurs branches feature/*.) Tj
+T*
+() Tj
+T*
+(Lot  Contenu  Jours-homme  Montant \(FCFA\)) Tj
+T*
+(L1 — Cadrage  Analyse du besoin, backlog MoSCoW, atelier de validation  10  300 000) Tj
+T*
+(L2 — Conception  Dossier UML complet, architecture, contrats d'API  12  360 000) Tj
+T*
+(L3 — Design  Charte, design system, maquettes, prototype Figma  12  360 000) Tj
+T*
+(L4 — Socle technique  Docker Compose, CI/CD, API Gateway, auth-service \(JWT, RBAC, 2FA\)  15  450 000) Tj
+T*
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2897 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(L5 — Organisation  Structures, sites, localisations, nomenclatures, paramètres  8  240 000) Tj
+T*
+(L6 — Patrimoine  Fiches biens, catégories, QR codes, import Excel/CSV, recherche  25  750 000) Tj
+T*
+(L7 — Mouvements  Entrées, affectations, transferts, sorties, workflows de validation  12  360 000) Tj
+T*
+(L8 — Inventaire  Campagnes, PWA hors-ligne, scan QR, écarts, récolement  15  450 000) Tj
+T*
+(L9 — Maintenance  Plans préventifs, pannes, ordres d'intervention, prestataires  10  300 000) Tj
+T*
+(L10 — Valorisation  Amortissements \(linéaire/dégressif\), VNC, réévaluations  12  360 000) Tj
+T*
+(L11 — Documents  GED : stockage, versionnage, contrôle formats, sécurisation  8  240 000) Tj
+T*
+(L12 — Notifications & audit  Alertes e-mail/internes, journal d'audit, files RabbitMQ  8  240 000) Tj
+T*
+(L13 — Reporting  Tableaux de bord, états standards, exports PDF/Excel/CSV  15  450 000) Tj
+T*
+(L14 — Interface web  Écrans métier Inertia/Vue, responsive, PWA inventaire  30  900 000) Tj
+T*
+(L15 — Conteneurisation  Dockerfiles multi-étapes, compose global, scripts init BDD  8  240 000) Tj
+T*
+(L16 — Tests & recette  Tests unitaires/intégration/E2E, sécurité, recette UAT  15  450 000) Tj
+T*
+(L17 — Documentation & déploiement  Guides, formation utilisateurs clés, mise en production  14  420 000) Tj
+T*
+(Sous-total  229  6 870 000) Tj
+T*
+() Tj
+T*
+(> Le lot L17 regroupe « documentation et guide » \(8 j-h\) et « formation et déploiement » \(6 j-h\) du CDC, ) Tj
+T*
+(soit 14 j-h.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4. PLANNING ET JALONS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Le planning prévisionnel \(6 semaines\) est détaillé au chapitre 12 du cahier des charges ; le diagramme ) Tj
+T*
+(de Gantt ci-dessous en est la restitution.) Tj
+T*
+() Tj
+T*
+(![Diagramme de Gantt]\(exports/gantt.png\)) Tj
+T*
+() Tj
+T*
+(*Source : sources/gantt.mmd — exports exports/gantt.svg et gantt.png.*) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Jalons de validation  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Jalon  Échéance  Objet) Tj
+T*
+(J1  Fin S1  Validation du cahier des charges et du backlog priorisé) Tj
+T*
+(J2  Fin S2  Validation UML, maquettes, prototype ; socle technique lancé) Tj
+T*
+(J3  Fin S3  Démonstration du socle conteneurisé + premiers services) Tj
+T*
+(J4  Fin S5  Fonctionnalités complètes, gel du périmètre, début recette) Tj
+T*
+(J5  Fin S6  Recette finale, mise en production, réception) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5. COûTS ANNEXES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5.1 Pendant le projet  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Poste  Montant \(FCFA\)  Détail) Tj
+T*
+(Outils, licences, hébergement de recette  600 000  Environnement de recette 4 vCPU/8 Go, nom de domaine, ) Tj
+T*
+(certificats TLS, licences éventuelles, forfait outils) Tj
+T*
+(Provision imprévus / évolutions mineures  687 000  10 % du sous-total prestations) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5.2 Coûts récurrents \(hors projet, après réception\)  ) Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2537 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+(Poste  Montant annuel estimé \(FCFA\)) Tj
+T*
+(Maintenance corrective et évolutive \(~ 15 % du coût de développement\)  1 030 500) Tj
+T*
+(Hébergement de production, nom de domaine, TLS, sauvegardes  À déterminer selon l'infrastructure retenue ) Tj
+T*
+(\(dimensionnement indicatif : 8 vCPU / 16 Go / 200 Go SSD + stockage sauvegarde >= 500 Go\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5.3 Hors chiffrage  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Matériel : serveurs, lecteurs de codes-barres, terminaux mobiles \(acquisition séparée\).) Tj
+T*
+(- Reprise de données papier non numérisées \(hors import de fichiers structurés\).) Tj
+T*
+(- Évolutions de périmètre après gel : faire l'objet d'un avenant chiffré.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(6. ÉCHéANCIER DE PAIEMENT PROPOSé) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Étape  Part  Montant \(FCFA\)) Tj
+T*
+(Signature / validation du cahier des charges  30 %  2 447 100) Tj
+T*
+(Validation de la conception et des maquettes  20 %  1 631 400) Tj
+T*
+(Livraison des modules et recette fonctionnelle  30 %  2 447 100) Tj
+T*
+(Mise en production, formation et réception définitive  20 %  1 631 400) Tj
+T*
+(Total  100 %  8 157 000) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(7. OPTIONS ET HYPOTHèSES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Options envisagées  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Option  Description  Impact) Tj
+T*
+(A — Périmètre complet \(recommandée\)  Les 12 micro-services + interface web + PWA inventaire, tel que ) Tj
+T*
+(spécifié  8 157 000 FCFA, 6 semaines, 9 intervenants) Tj
+T*
+(B — Socle + modules prioritaires  Auth + organisation + patrimoine + mouvements + inventaire ; reporting ) Tj
+T*
+(et maintenance en phase 2  ~5 900 000 FCFA estimés, même délai \(équipe recentrée\)) Tj
+T*
+(C — allégé reporting  Option A sans exports Excel avancés ni états personnalisés  ~7 600 000 FCFA \(-550 ) Tj
+T*
+(000\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Hypothèses  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Périmètre conforme au cahier des charges ; toute évolution fait l'objet d'un avenant chiffré.) Tj
+T*
+(2. Disponibilité des interlocuteurs métier pour ateliers et validations \(délai de réponse < 48 h\).) Tj
+T*
+(3. Infrastructure d'hébergement fournie ou commandée séparément.) Tj
+T*
+(4. Jeu de données initial \(fichiers Excel/CSV des biens\) fourni avant la semaine 3.) Tj
+T*
+(5. Équipe complète disponible dès le premier jour.) Tj
+T*
+(6. Montants hors taxes et hors matériel ; conditions de paiement à valider contractuellement.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Conditions de réussite du délai \(rappel CDC S12.4\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 453 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(- Équipe de 9 intervenants à temps plein dès J1.) Tj
+T*
+(- Périmètre gelé fin S1 ; demandes nouvelles traitées en avenant ou post-production.) Tj
+T*
+(- Référents métier désignés, validations sous 48 h.) Tj
+T*
+(- Serveur compatible Docker disponible dès S1.) Tj
+T*
+(- Données de départ fournies avant S3.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(*Document établi par CHAOLD Komi Serge — Concepteur et chef de projet.*) Tj
+T*
+
+ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000232 00000 n 
+0000000358 00000 n 
+0000003149 00000 n 
+0000003275 00000 n 
+0000006223 00000 n 
+0000006349 00000 n 
+0000008937 00000 n 
+0000009065 00000 n 
+0000000000 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+9569
+%%EOF

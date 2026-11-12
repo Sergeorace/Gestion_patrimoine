@@ -1,0 +1,26 @@
+# Secrets et environnements locaux - ne jamais committer
+.env
+services/*/.env
+frontend/.env
+*.pem
+!docker/keys/jwt_public.pem
+
+# Dependances / builds
+vendor/
+node_modules/
+public/build/
+public/hot
+storage/*.key
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

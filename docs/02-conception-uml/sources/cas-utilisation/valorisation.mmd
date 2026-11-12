@@ -1,0 +1,23 @@
+%% Cas d'utilisation - Module Valorisation et amortissement (valuation-service)
+flowchart LR
+    subgraph Acteurs
+        CM[Comptable matieres]
+        GC[Gestionnaire central]
+        LECT["Lecteurs (auditeur, decideur, responsable)"]
+    end
+
+    subgraph ValuationService["valuation-service"]
+        CU09[CU-09 Valorisation]
+        CU09a[Calculer les amortissements]
+        CU09b[Suivre VNC par bien]
+        CU09c[Generer etats de valorisation]
+        CU09d[Enregistrer une reevaluation]
+    end
+
+    CM --> CU09
+    GC --> CU09
+    LECT --> CU09
+    CU09 --> CU09a
+    CU09 --> CU09b
+    CU09 --> CU09c
+    CU09 --> CU09d

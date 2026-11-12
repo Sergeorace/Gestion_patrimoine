@@ -1,0 +1,60 @@
+%% Diagramme de cas d'utilisation GLOBAL - Plateforme de gestion du patrimoine de l'Etat togolais
+flowchart LR
+    subgraph Acteurs
+        ADMIN[Administrateur systeme]
+        GC[Gestionnaire central du patrimoine]
+        RS[Responsable de structure]
+        AI[Agent inventorialiste]
+        CM[Comptable matieres]
+        AM[Agent de maintenance]
+        AUD[Auditeur / Controleur]
+        DEC[Decideur]
+    end
+
+    subgraph Systeme["Plateforme de gestion du patrimoine"]
+        CU01[S'authentifier]
+        CU02[Gerer utilisateurs et roles]
+        CU03[Gerer structures, sites et referentiels]
+        CU04[Enregistrer / modifier un bien]
+        CU05[Affecter / transferer un bien]
+        CU06[Sortir un bien du patrimoine]
+        CU07[Mener une campagne d'inventaire]
+        CU08[Planifier / suivre une maintenance]
+        CU09[Consulter la valorisation]
+        CU10[Consulter tableaux de bord et rapports]
+        CU11[Consulter le journal d'audit]
+        CU12[Importer des donnees]
+        CU13[Gerer les documents]
+    end
+
+    CU01 -.->|<<include>>| CU02
+
+    ADMIN --> CU02
+    ADMIN --> CU03
+    GC --> CU03
+    RS --> CU03
+    GC --> CU05
+    RS --> CU04
+    RS --> CU05
+    RS --> CU06
+    GC --> CU05
+    GC --> CU06
+    AI --> CU07
+    RS --> CU07
+    GC --> CU07
+    AM --> CU08
+    CM --> CU09
+    GC --> CU09
+    CM --> CU09
+    DEC --> CU10
+    GC --> CU10
+    AUD --> CU10
+    GC --> CU10
+    AUD --> CU11
+    GC --> CU11
+    ADMIN --> CU11
+    RS --> CU12
+    GC --> CU12
+    RS --> CU13
+    GC --> CU13
+    AI --> CU13

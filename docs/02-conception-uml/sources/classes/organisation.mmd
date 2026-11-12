@@ -1,0 +1,66 @@
+%% Diagramme de classes - organisation-service (organisation_db)
+classDiagram
+    class Structure {
+        +uuid id
+        +string code UK
+        +string libelle
+        +string type
+        +uuid parentId FK
+        +string statut
+        +text adresse
+        +timestamps
+    }
+    class Site {
+        +uuid id
+        +string code UK
+        +string libelle
+        +uuid structureId FK
+        +string region
+        +string prefecture
+        +string commune
+        +text adresse
+        +decimal latitude
+        +decimal longitude
+        +timestamps
+    }
+    class Localisation {
+        +uuid id
+        +uuid siteId FK
+        +string batiment
+        +string etage
+        +string bureau
+        +text precision
+    }
+    class Categorie {
+        +uuid id
+        +string code UK
+        +string libelle
+        +uuid parentId FK
+        +text description
+        +integer dureeVieMois
+        +string methodeAmortissement
+        +boolean actif
+        +timestamps
+    }
+    class Nomenclature {
+        +uuid id
+        +string type
+        +string code UK
+        +string libelle
+        +integer ordre
+        +boolean actif
+    }
+    class ParametreAmortissement {
+        +uuid id
+        +uuid categorieId FK
+        +string methode
+        +numeric taux
+        +integer dureeVieMois
+        +date dateEffet
+    }
+
+    Structure "1" --> "n" Structure : parent/enfant
+    Structure "1" --> "n" Site : possede
+    Site "1" --> "n" Localisation : contient
+    Categorie "1" --> "n" Categorie : sous-categories
+    ParametreAmortissement --> Categorie : parametre

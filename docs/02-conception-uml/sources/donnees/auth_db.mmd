@@ -1,0 +1,64 @@
+%% MLD - auth_db (PostgreSQL)
+erDiagram
+    UTILISATEURS {
+        uuid id PK
+        string nom
+        string prenom
+        string email UK
+        string mot_de_passe_hash
+        uuid structure_id
+        string statut
+        boolean two_factor_actif
+        integer echecs_connexion
+        timestamp verrouille_jusqu_a
+        timestamp derniere_connexion_at
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+    ROLES {
+        uuid id PK
+        string code UK
+        string libelle
+        text description
+        timestamp created_at
+    }
+    PERMISSIONS {
+        uuid id PK
+        string code UK
+        string module
+        string action
+        timestamp created_at
+    }
+    ROLE_UTILISATEUR {
+        uuid utilisateur_id PK,FK
+        uuid role_id PK,FK
+        timestamp accorde_le
+    }
+    PERMISSION_ROLE {
+        uuid role_id PK,FK
+        uuid permission_id PK,FK
+    }
+    JETONS_OAUTH {
+        uuid id PK
+        uuid utilisateur_id FK
+        string token_id UK
+        text refresh_token
+        timestamp expire_le
+        timestamp revoque_le
+        timestamp created_at
+    }
+    JOURNAL_CONNEXION {
+        uuid id PK
+        uuid utilisateur_id FK
+        string ip
+        string user_agent
+        boolean succes
+        timestamp date
+    }
+    UTILISATEURS ||--o{ ROLE_UTILISATEUR : possede
+    ROLES ||--o{ ROLE_UTILISATEUR : attribue
+    ROLES ||--o{ PERMISSION_ROLE : contient
+    PERMISSIONS ||--o{ PERMISSION_ROLE : regroupee_dans
+    UTILISATEURS ||--o{ JETONS_OAUTH : emet
+    UTILISATEURS ||--o{ JOURNAL_CONNEXION : genere

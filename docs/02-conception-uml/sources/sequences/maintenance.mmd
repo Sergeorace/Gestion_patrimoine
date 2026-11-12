@@ -1,0 +1,40 @@
+%% Diagramme de sequence - Planification et realisation d'une maintenance (CU-08)
+sequenceDiagram
+    autonumber
+    actor AM as Agent maintenance
+    actor RS as Responsable structure
+    participant W as web-app
+    participant G as api-gateway
+    participant M as maintenance-service
+    participant S as asset-service
+    participant DB as maintenance_db
+    participant N as notification-service
+
+    AM->>W: Cree un plan preventif (bien, periodicite, echeance)
+    W->>G: POST /api/v1/maintenance/plans
+    G->>M: Creation plan
+    M->>S: GET /api/v1/assets/{id} (verification bien)
+    S-->>M: Bien actif
+    M->>DB: INSERT plan_maintenance
+    M->>N: Evenement "plan cree" + alerte echeance programmee
+    Note over M,N: Tache planifiee : alerte avant echeance
+    N-->>AM: Rappel echeance maintenance
+    RS->>W: Declare une panne sur un bien
+    W->>G: POST /api/v1/maintenance/interventions (type=panne)
+    G->>M: Declaration
+    M->>DB: INSERT intervention statut=Nouveau
+    M->>N: Notification au responsable maintenance
+    AM->>W: Cree ordre d'intervention (date, prestataire, cout prevu)
+    W->>G: POST /api/v1/maintenance/interventions/{id}/assign
+    G->>M: Assignation
+    M->>DB: UPDATE statut=En cours
+    M->>S: PATCH /api/v1/assets/{id} (etat=En maintenance)
+    Note over AM: Realisation sur le terrain
+    AM->>W: Cloture l'intervention (compte-rendu, cout, photos)
+    W->>G: POST /api/v1/maintenance/interventions/{id}/close
+    G->>M: Cloture
+    M->>DB: UPDATE statut=Cloturee + cout
+    M->>S: PATCH /api/v1/assets/{id} (etat=Disponible)
+    M->>N: Evenement "intervention cloturee"
+    M-->>G: 200 OK
+    G-->>W: Intervention historisee

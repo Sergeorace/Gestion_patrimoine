@@ -1,0 +1,16 @@
+%% Diagramme d'etats-transitions - Demande de mouvement (movement)
+stateDiagram-v2
+    [*] --> Brouillon : saisie demande
+    Brouillon --> EnAttente : soumission
+    EnAttente --> Validee : approbation valideur habilite
+    EnAttente --> Rejetee : rejet avec motif
+    EnAttente --> Annulee : annulation par le demandeur
+    Validee --> Executee : application effet (asset-service)
+    Executee --> Cloturee : notification + audit
+    Executee --> Echouee : erreur application - retry
+    Echouee --> Executee : retry succes
+    Echouee --> Bloquee : echecs repetes - intervention
+    Bloquee --> Executee : correction + retry
+    Cloturee --> [*]
+    Rejetee --> [*]
+    Annulee --> [*]

@@ -1,0 +1,33 @@
+%% Diagramme de sequence - Enregistrement d'un bien (CU-04)
+sequenceDiagram
+    autonumber
+    actor RS as Responsable structure
+    participant W as web-app
+    participant G as api-gateway
+    participant S as asset-service
+    participant O as organisation-service
+    participant DB as asset_db
+    participant QR as Generateur QR
+    participant N as notification-service
+    participant D as document-service
+
+    RS->>W: Remplit fiche bien (designation, categorie, valeur, site)
+    W->>G: POST /api/v1/assets
+    G->>S: JWT valide ? route vers asset-service
+    S->>O: GET /api/v1/structures/{id} (verification perimetre RG-06)
+    O-->>S: Structure du demandeur
+    S->>DB: Verification unicite code inventaire
+    S->>DB: INSERT asset (statut = Enregistre)
+    DB-->>S: asset_id + code_inventaire
+    S->>QR: Generation QR code + etiquette
+    QR-->>S: Image QR
+    opt Pieces jointes
+        W->>D: POST /api/v1/documents (multipart)
+        D-->>W: document_id
+        W->>G: Association document -> asset
+    end
+    S->>N: Evenement "bien enregistre" (RabbitMQ)
+    N-->>RS: Notification confirmation
+    S-->>G: 201 Created (fiche bien)
+    G-->>W: Bien cree
+    W-->>RS: Fiche bien + QR code telechargeable

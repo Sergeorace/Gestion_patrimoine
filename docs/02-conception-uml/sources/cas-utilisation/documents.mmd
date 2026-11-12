@@ -1,0 +1,25 @@
+%% Cas d'utilisation - Module Gestion documentaire (document-service)
+flowchart LR
+    subgraph Acteurs
+        RS[Responsable de structure]
+        GC[Gestionnaire central]
+        AI[Agent inventorialiste]
+        AM[Agent de maintenance]
+    end
+
+    subgraph DocumentService["document-service"]
+        CU13[CU-13 Documents]
+        CU13a[Televerser une piece]
+        CU13b[Associer a un bien / mouvement / inventaire / intervention]
+        CU13c[Controler format et taille]
+        CU13d[Consulter / telecharger / versionner]
+    end
+
+    RS --> CU13
+    GC --> CU13
+    AI --> CU13
+    AM --> CU13
+    CU13 --> CU13a
+    CU13 --> CU13b
+    CU13 --> CU13c
+    CU13 --> CU13d

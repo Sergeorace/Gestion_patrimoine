@@ -1,0 +1,19 @@
+%% Diagramme d'etats-transitions - Cycle de vie d'un bien (asset)
+stateDiagram-v2
+    [*] --> Enregistre : creation fiche bien (CU-04)
+    Enregistre --> Disponible : validation / inventaire initial
+    Disponible --> Affecte : mouvement affectation valide (RG-02)
+    Affecte --> EnMaintenance : declaration panne / plan maintenance
+    EnMaintenance --> Affecte : intervention cloturee
+    Affecte --> Disponible : retour / fin mise a disposition
+    Disponible --> ProposeASortie : demande de sortie creee
+    Affecte --> ProposeASortie : demande de sortie creee
+    ProposeASortie --> Sorti : validation + PV (RG-03, RG-04)
+    ProposeASortie --> Disponible : sortie rejetee
+    ProposeASortie --> Affecte : sortie rejetee (retour etat precedent)
+    Sorti --> [*] : etat final non modifiable (RG-04)
+
+    note right of Sorti
+        Code inventaire non reutilisable (RG-01)
+        Reste consultable pour audit
+    end note

@@ -1,0 +1,616 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R ] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2633 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+(FICHE TECHNIQUE — PLATEFORME DE GESTION DU PATRIMOINE DE L'ÉTAT TOGOLAIS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Document  Fiche technique \(Étape 5\)) Tj
+T*
+(Version  1.0) Tj
+T*
+(Date  12 novembre 2026) Tj
+T*
+(Statut  Validé pour développement) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. VUE D'ENSEMBLE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Élément  Spécification) Tj
+T*
+(Nom  Plateforme de gestion du patrimoine de l'État togolais) Tj
+T*
+(Type  Application web responsive \(PWA pour l'inventaire\) + API REST) Tj
+T*
+(Architecture  Micro-services, API Gateway, REST synchrone + événements asynchrones) Tj
+T*
+(Langage / framework  PHP 8.3+ / Laravel 12) Tj
+T*
+(Interface  Inertia.js, Vue 3, Tailwind CSS, Chart.js) Tj
+T*
+(Base de données  PostgreSQL 16 — une base logique par service) Tj
+T*
+(Messagerie / cache  RabbitMQ 4, Redis 7) Tj
+T*
+(Conteneurisation  Docker + Docker Compose \(images Alpine multi-étapes\)) Tj
+T*
+(Authentification  JWT RS256, 2FA TOTP, RBAC granulaire) Tj
+T*
+(Documentation API  OpenAPI 3 \(Scramble\)) Tj
+T*
+(Qualité / CI  Git, PHPUnit/Pest, PHPStan, Laravel Pint, pipeline CI) Tj
+T*
+(Exports  PDF \(DomPDF\), Excel/CSV \(maatwebsite/excel\)) Tj
+T*
+(Langue interface  Français) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2. ARCHITECTURE MICRO-SERVICES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2.1 Découpage \(database per service\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Service  Responsabilité  Base logique  Port interne) Tj
+T*
+(api-gateway  Routage, validation JWT, rate limiting, CORS, TLS  —  80/443) Tj
+T*
+(auth-service  Utilisateurs, rôles, permissions, JWT, 2FA  auth_db  8001) Tj
+T*
+(organisation-service  Structures, sites, localisations, nomenclatures  organisation_db  8002) Tj
+T*
+(asset-service  Fiches biens, QR codes, import  asset_db  8003) Tj
+T*
+(movement-service  Entrées, affectations, transferts, sorties, workflows  movement_db  8004) Tj
+T*
+(inventory-service  Campagnes, constats, écarts, récolement  inventory_db  8005) Tj
+T*
+(maintenance-service  Plans, interventions, pannes, prestataires  maintenance_db  8006) Tj
+T*
+(valuation-service  Amortissements, VNC, réévaluations  valuation_db  8007) Tj
+T*
+(document-service  GED, versionnage, stockage fichiers  document_db + volume  8008) Tj
+T*
+(notification-service  Notifications, journal d'audit  notification_db  8009) Tj
+T*
+(reporting-service  Tableaux de bord, états, exports  reporting_db \(agrégats\)  8010) Tj
+T*
+(web-app  Interface Inertia/Vue  — \(consomme les API\)  3000) Tj
+T*
+() Tj
+T*
+(Le découpage détaillé, les diagrammes de classes, de composants et de déploiement sont dans ) Tj
+T*
+(docs/02-conception-uml/.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3185 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(2.2 Communication inter-services  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Synchrone — REST/JSON) Tj
+T*
+() Tj
+T*
+(- Préfixe /api/v1/ versionné sur tous les services.) Tj
+T*
+(- Auth : en-tête Authorization: Bearer <JWT> ; le gateway vérifie la signature \(clé publique RS256\) et ) Tj
+T*
+(le scope avant de router.) Tj
+T*
+(- Contrats : spécification OpenAPI par service, générée depuis les Form Requests \(Scramble\) et publiée ) Tj
+T*
+(sur /docs interne.) Tj
+T*
+(- Références inter-services par identifiants fonctionnels \(UUID\) — pas de clé étrangère inter-bases ) Tj
+T*
+(\(intégrité applicative contrôlée par les API\).) Tj
+T*
+() Tj
+T*
+(Asynchrone — événements RabbitMQ) Tj
+T*
+() Tj
+T*
+(Événement  Producteur  Consommateurs) Tj
+T*
+(bien.enregistre  asset-service  notification, reporting) Tj
+T*
+(bien.affecte / bien.sorti  movement-service  notification, reporting, valuation) Tj
+T*
+(inventaire.cloture  inventory-service  notification, reporting) Tj
+T*
+(maintenance.echeance  maintenance-service \(scheduler\)  notification) Tj
+T*
+(maintenance.cloturee  maintenance-service  notification, reporting, asset) Tj
+T*
+(utilisateur.connecte  auth-service  notification \(audit\)) Tj
+T*
+() Tj
+T*
+(- Exchanges : patrimoine.events \(topic\), files durables par consommateur, accusés manuels.) Tj
+T*
+(- Idempotence : chaque événement porte un event_id UUID ; les consommateurs dédupliquent via table ) Tj
+T*
+(traites_evenements.) Tj
+T*
+(- Retry : 3 tentatives exponentielles puis dead-letter queue *.dlq + alerte supervision.) Tj
+T*
+() Tj
+T*
+(Cohérence : cohérence à terme entre services. Les workflows critiques \(affectation, sortie\) sont ) Tj
+T*
+(orchestrés par movement-service qui appelle les API métier de façon synchrone pour l'effet immédiat, ) Tj
+T*
+(puis publie l'événement pour les traitements différés.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2.3 Gestion des erreurs  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Format d'erreur uniforme : { "error": { "code": "ASSET_NOT_FOUND", "message": "...", "details": {...} ) Tj
+T*
+(} } avec codes HTTP standards.) Tj
+T*
+(- Exceptions métier mappées sur des classes dédiées \(DomainException\) -> codes stables pour le frontend.) Tj
+T*
+(- Timeouts inter-services : 5 s ; circuit breaker simple \(compteur d'échecs -> 503 rapide pendant 30 s\).) Tj
+T*
+(- Logs structurés JSON \(Monolog\) avec trace_id propagé \(en-tête X-Request-Id\) pour le suivi de bout en ) Tj
+T*
+(bout.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(3. STACK TECHNIQUE ET JUSTIFICATION) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Couche  Choix  Version  Justification) Tj
+T*
+(Runtime  PHP  8.3+ \(8.4 recommandé\)  Exigence CDC ; typage strict, performances) Tj
+T*
+(Framework  Laravel  12.x stable  CDC ; écosystème, Eloquent, queues, sécurité) Tj
+T*
+(Frontend  Inertia.js + Vue 3 + Tailwind  Inertia 2 / Vue 3.5 / TW 4  SPA sans duplication d'API pour le ) Tj
+T*
+(web ; SSR optionnel) Tj
+T*
+(Graphiques  Chart.js via vue-chartjs  4.x  Légers, interactifs, exportables) Tj
+T*
+(PWA inventaire  Workbox / vite-plugin-pwa  —  Hors-ligne + sync pour terrain) Tj
+T*
+(BDD  PostgreSQL  16  CDC ; JSONB, robustesse, une base par service) Tj
+T*
+(Cache/files  Redis  7  Sessions, cache, queues Laravel, rate limiting) Tj
+T*
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3377 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(Messagerie  RabbitMQ  4.x \(management\)  CDC ; topic exchanges, DLQ, management UI) Tj
+T*
+(Proxy  Nginx  alpine  CDC ; TLS, routage, rate limiting) Tj
+T*
+(PDF  DomPDF / barryvdh  3.x  Génération d'états côté reporting-service) Tj
+T*
+(Excel/CSV  maatwebsite/excel  3.x  Imports/exports) Tj
+T*
+(QR codes  simplesoftwareio/simple-qrcode  —  Étiquettes inventaire) Tj
+T*
+(Tests  PHPUnit + Pest  3.x  CDC) Tj
+T*
+(Qualité  PHPStan \(level 6\), Pint  —  CDC) Tj
+T*
+(API docs  Scramble \(OpenAPI\)  —  Génération depuis le code) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Authentification — décision d'implémentation  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Le CDC mentionne « Laravel Passport/JWT ». Décision retenue :) Tj
+T*
+() Tj
+T*
+(- auth-service émet des JWT signés RS256 \(paquet lcobucci/jwt\), access token 15 min + refresh token 7 ) Tj
+T*
+(jours \(rotation à chaque usage\).) Tj
+T*
+(- Clés : paire RSA générée au déploiement, clé privée dans auth-service \(.env\), clé publique distribuée ) Tj
+T*
+(aux autres services via variable d'environnement ou endpoint /.well-known/jwks.json.) Tj
+T*
+(- 2FA : TOTP \(RFC 6238\) pour les rôles sensibles \(admin, gestionnaire central, comptable\).) Tj
+T*
+(- RBAC : tables roles/permissions en base ; le JWT embarque permissions[] et structure_id \(périmètre ) Tj
+T*
+(RG-06\) ; chaque service revérifie le périmètre sur les ressources.) Tj
+T*
+(- Mot de passe : bcrypt \(coût 12\) ; verrouillage 5 échecs / 15 min ; politique : 12 caractères min, ) Tj
+T*
+(complexité.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4. MODèLE DE DONNéES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Un schéma par service : auth_db, organisation_db, asset_db, movement_db, inventory_db, maintenance_db, ) Tj
+T*
+(valuation_db, document_db, notification_db, reporting_db — créés par docker/postgres/init.sql au premier ) Tj
+T*
+(démarrage.) Tj
+T*
+(- Clés primaires UUID \(v7 pour tri chronologique\) ; created_at/updated_at partout ; soft delete ) Tj
+T*
+(\(deleted_at\) sur les entités métier.) Tj
+T*
+(- Types : jsonb pour caractéristiques variables des biens ; numeric\(15,2\) pour les montants ; ) Tj
+T*
+(timestamptz pour les horodatages.) Tj
+T*
+(- Index sur colonnes de recherche : code_inventaire, structure_id, statut, date_acquisition, email.) Tj
+T*
+(- Contraintes : unicité code_inventaire et immatriculation, checks valeur_acquisition >= 0, vnc >= 0.) Tj
+T*
+(- Migrations + seeders Laravel versionnés par service ; seeders de démonstration réalistes \(structures ) Tj
+T*
+(togolaises, catégories, ~200 biens\).) Tj
+T*
+(- Pas de FK inter-bases : références fonctionnelles UUID contrôlées applicativement.) Tj
+T*
+() Tj
+T*
+(Le MLD complet est dans docs/02-conception-uml/sources/donnees/.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5. SéCURITé) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Domaine  Mesure) Tj
+T*
+(Transport  HTTPS/TLS obligatoire en production \(Nginx + certbot ou certificat fourni\) ; HSTS ; ) Tj
+T*
+(redirection 80->443) Tj
+T*
+(AuthN  JWT RS256 15 min + refresh rotatif ; 2FA TOTP rôles sensibles ; verrouillage après 5 échecs) Tj
+T*
+(AuthZ  RBAC par permission + cloisonnement par structure_id \(RG-06\) ; policies Laravel par ressource) Tj
+T*
+(Injection  Eloquent/Query Builder uniquement ; validation Form Requests stricte ; jamais de SQL concaténé) Tj
+T*
+(XSS  Échappement Blade/Vue par défaut ; CSP stricte ; {{ }} uniquement) Tj
+T*
+(CSRF  Jeton de session Inertia + SameSite=Strict sur cookies) Tj
+T*
+
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 2662 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(Fichiers  Whitelist MIME \(pdf, jpg, png, xlsx, csv\), taille max 10 Mo, scan nom \(pas de chemin\), ) Tj
+T*
+(stockage hors webroot, hash SHA-256) Tj
+T*
+(Rate limiting  Gateway : 100 req/min/IP anonyme, 300/min authentifié ; endpoints login : 5/min) Tj
+T*
+(Secrets  .env non versionnés ; secrets Docker hors images ; rotation documentée) Tj
+T*
+(Conteneurs  Images Alpine minimales, USER non-root, healthchecks, read-only rootfs où possible) Tj
+T*
+(Audit  audit_logs immuable applicativement \(append-only\) pour actions sensibles \(RG-07\)) Tj
+T*
+(Données personnelles  Minimisation ; hachage mots de passe ; conformité loi togolaise protection données) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(6. SAUVEGARDES ET REPRISE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Fréquence : pg_dump quotidien par base \(script docker/scripts/backup.sh\), rétention 30 jours glissants ) Tj
+T*
+(+ archive mensuelle 12 mois.) Tj
+T*
+(- Stockage : volume dédié backups + option pg_dump | gzip | aws s3 \(ou S3-compatible\) pour ) Tj
+T*
+(externalisation.) Tj
+T*
+(- Documents : volume documents sauvegardé avec les dumps \(rsync incrémental\).) Tj
+T*
+(- Test de restauration : procédure mensuelle documentée \(restore.sh\) et testée en recette — critère ) Tj
+T*
+(d'acceptation CDC.) Tj
+T*
+(- RPO 24 h / RTO 4 h indicatifs pour la production.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(7. SUPERVISION ET EXPLOITATION) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Besoin  Solution) Tj
+T*
+(Healthchecks  HEALTHCHECK Docker sur chaque service \(/health Laravel, pg_isready, rabbitmq-diagnostics\)) Tj
+T*
+(Logs  JSON stdout -> driver json-file avec rotation \(10 Mo x 5\) ; docker compose logs) Tj
+T*
+(Métriques  Endpoint /metrics \(Prometheus\) par service — phase 2 : stack Prometheus/Grafana) Tj
+T*
+(Alertes  Notification-service consomme événements + watchdog planifié \(échéances, échecs DLQ\)) Tj
+T*
+(Traçabilité  X-Request-Id propagé gateway -> services -> logs -> audit) Tj
+T*
+(Supervisor  restart: unless-stopped partout ; depends_on service_healthy) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(8. EXIGENCES D'INFRASTRUCTURE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Production \(recommandé, CDC S14.1\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Ressource  Dimensionnement) Tj
+T*
+(Serveur applicatif  8 vCPU, 16 Go RAM, 200 Go SSD — Linux + Docker Engine) Tj
+T*
+(Stockage / sauvegardes  Volume >= 500 Go, sauvegarde externalisée) Tj
+T*
+(Réseau  IP publique ou intranet, HTTPS, nom de domaine) Tj
+T*
+(OS  Debian 12 / Ubuntu 22.04 LTS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Recette / développement  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Environnement  Dimensionnement) Tj
+T*
+(Recette  4 vCPU, 8 Go RAM) Tj
+T*
+(Dev local  Docker Desktop, 4 Go RAM alloués) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 2222 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(9. STRATéGIE DE DéPLOIEMENT) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Dev local : docker compose up -d --build — réseau patrimoine-net, volumes pgdata, documents, backups, ) Tj
+T*
+(redis-data, rabbitmq-data.) Tj
+T*
+(2. Initialisation BDD : docker/postgres/init.sql crée les 10 bases au 1er démarrage ; php artisan ) Tj
+T*
+(migrate --seed par service \(cible : tous les services\).) Tj
+T*
+(3. Recette : docker-compose.recette.yml \( surcharge : domaines, TLS, ressources\).) Tj
+T*
+(4. Production : docker-compose.prod.yml + secrets via .env ; images taguées vX.Y.Z ; migration planifiée ) Tj
+T*
+(avec sauvegarde préalable ; retour arrière = image N-1 + restauration dump si nécessaire.) Tj
+T*
+(5. Mise à jour : git pull -> docker compose build <service> -> up -d -> migrations -> smoke tests.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(10. STRATéGIE DE TESTS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Type  Outil  Couverture cible) Tj
+T*
+(Unitaires  PHPUnit/Pest  >= 70 % logique métier \(CDC\)) Tj
+T*
+(Feature par service  Pest HTTP tests  CRUD, validation, autorisation, périmètre) Tj
+T*
+(Intégration  Tests cross-services \(gateway -> service -> DB\)  Contrats API, événements RabbitMQ) Tj
+T*
+(Contrats API  Pest + collections OpenAPI  Codes réponse, schémas) Tj
+T*
+(E2E  Playwright \(recette\)  Parcours : login, création bien, affectation, inventaire, maintenance, ) Tj
+T*
+(sortie, rapport) Tj
+T*
+(Sécurité  Tests 403/404, rate limit, validation fichiers  OWASP de base) Tj
+T*
+(Performance  k6 \(recette\)  < 2 s pour 95 % requêtes courantes) Tj
+T*
+() Tj
+T*
+(CI : à chaque push — composer install, Pint, PHPStan, PHPUnit par service, build des images Docker.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(11. LIMITES CONNUES ET éVOLUTIONS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Interconnexion finances publiques : non prévue \(phase ultérieure via API REST déjà versionnée\).) Tj
+T*
+(- Application mobile native : non prévue ; la PWA couvre le besoin inventaire.) Tj
+T*
+(- Multi-instance : les services sont sans état \(sessions Redis\) -> scalabilité horizontale possible ; ) Tj
+T*
+(reporting-service pourra consommer un read replica si volume élevé.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(*Document de référence pour l'équipe de développement — Étape 5.*) Tj
+T*
+
+ET
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000142 00000 n 
+0000000239 00000 n 
+0000000365 00000 n 
+0000003049 00000 n 
+0000003175 00000 n 
+0000006411 00000 n 
+0000006537 00000 n 
+0000009965 00000 n 
+0000010093 00000 n 
+0000012807 00000 n 
+0000012935 00000 n 
+0000000000 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+15209
+%%EOF

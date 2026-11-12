@@ -1,0 +1,124 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='900' viewBox='0 0 1440 900'>
+<rect width='1440' height='900' fill='#F3F4F6'/>
+<rect x='0' y='0' width='240' height='900' rx='0' fill='#0B2545'/>
+<rect x='0' y='0' width='240' height='64' rx='0' fill='#13315C'/>
+<text x='20' y='40' font-size='15' fill='#FFFFFF' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>PATERNITE</text>
+<text x='20' y='57' font-size='11' fill='#93C5FD' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Etat togolais</text>
+<text x='20' y='92' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⌂</text>
+<text x='46' y='92' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Tableau de bord</text>
+<text x='20' y='136' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>▦</text>
+<text x='46' y='136' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Biens</text>
+<text x='20' y='180' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⇄</text>
+<text x='46' y='180' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Mouvements</text>
+<rect x='0' y='202' width='240' height='40' rx='0' fill='#13315C'/>
+<rect x='0' y='202' width='3' height='40' rx='0' fill='#B8860B'/>
+<text x='20' y='224' font-size='15' fill='#FFFFFF' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>☰</text>
+<text x='46' y='224' font-size='13' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Inventaires</text>
+<text x='20' y='268' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚒</text>
+<text x='46' y='268' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Maintenance</text>
+<text x='20' y='312' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>¤</text>
+<text x='46' y='312' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valorisation</text>
+<text x='20' y='356' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>◔</text>
+<text x='46' y='356' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rapports</text>
+<text x='20' y='400' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚙</text>
+<text x='46' y='400' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Administration</text>
+<line x1='20' y1='840' x2='220' y2='840' stroke='#1E3A5F' stroke-width='1'/>
+<text x='20' y='866' font-size='11' fill='#64748B' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>v1.0 - 2026</text>
+<rect x='240' y='0' width='1200' height='56' rx='0' fill='#FFFFFF'/>
+<line x1='240' y1='56' x2='1440' y2='56' stroke='#D1D5DB' stroke-width='1'/>
+<text x='268' y='35' font-size='20' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Campagne INV-2026-S3</text>
+<rect x='1020' y='14' width='220' height='28' rx='6' fill='#F3F4F6'/>
+<text x='1040' y='33' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rechercher un bien, un mouvement...</text>
+<circle cx='1380' cy='28' r='14' fill='#DBEAFE'/>
+<text x='1380' y='33' font-size='13' fill='#13315C' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>A</text>
+<text x='268' y='100' font-size='22' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Inventaire T3 - Structures centrales</text>
+<text x='268' y='124' font-size='13' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-DEF, MIN-FIN - Site central de Lome - 01/12 au 15/12/2026</text>
+<rect x='268' y='148' width='700' height='200' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='286' y='182' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Avancement global</text>
+<rect x='286' y='200' width='660' height='18' rx='9.0' fill='#F3F4F6'/>
+<rect x='286' y='200' width='448.8' height='18' rx='9.0' fill='#1D4E89'/>
+<text x='286' y='240' font-size='13' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>1 240 / 1 820 biens inventories (68%)</text>
+<text x='286' y='268' font-size='13' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Equipes :</text>
+<rect x='358' y='256' width='280' height='12' rx='6.0' fill='#F3F4F6'/>
+<rect x='358' y='256' width='229.6' height='12' rx='6.0' fill='#15803D'/>
+<text x='648' y='267' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Equipe A - 82%</text>
+<rect x='358' y='280' width='280' height='12' rx='6.0' fill='#F3F4F6'/>
+<rect x='358' y='280' width='151.20000000000002' height='12' rx='6.0' fill='#B45309'/>
+<text x='648' y='291' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Equipe B - 54%</text>
+<rect x='828' y='160' width='70' height='22' rx='11' fill='#DBEAFE'/>
+<text x='863.0' y='175' font-size='11' fill='#13315C' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>En cours</text>
+<rect x='984' y='148' width='452' height='200' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1002' y='176' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Ecarts detectes</text>
+<rect x='1002' y='190' width='416' height='36' rx='8' fill='#0B2545'/>
+<text x='1012' y='212.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Type</text>
+<text x='1289.3333333333333' y='212.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Nombre</text>
+<rect x='1002' y='226' width='416' height='36' rx='0' fill='#FFFFFF'/>
+<line x1='1002' y1='262' x2='1418' y2='262' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1012' y='248.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Manquants</text>
+<text x='1289.3333333333333' y='248.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>12</text>
+<rect x='1002' y='262' width='416' height='36' rx='0' fill='#F9FAFB'/>
+<line x1='1002' y1='298' x2='1418' y2='298' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1012' y='284.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Excedentaires</text>
+<text x='1289.3333333333333' y='284.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>3</text>
+<rect x='1002' y='298' width='416' height='36' rx='0' fill='#FFFFFF'/>
+<line x1='1002' y1='334' x2='1418' y2='334' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1012' y='320.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Degrades</text>
+<text x='1289.3333333333333' y='320.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>27</text>
+<rect x='268' y='364' width='1132' height='320' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='286' y='392' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Constats recents</text>
+<rect x='286' y='404' width='1092' height='34' rx='8' fill='#0B2545'/>
+<text x='296' y='426' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Code</text>
+<text x='542.5806451612902' y='426' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Constate</text>
+<text x='753.9354838709676' y='426' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Etat</text>
+<text x='930.0645161290321' y='426' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Agent</text>
+<text x='1211.8709677419354' y='426' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Heure</text>
+<rect x='286' y='438' width='1092' height='38' rx='0' fill='#FFFFFF'/>
+<line x1='286' y1='476' x2='1378' y2='476' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='462' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0012</text>
+<rect x='542.5806451612902' y='446' width='63' height='22' rx='11' fill='#DCFCE7'/>
+<text x='574.0806451612902' y='461' font-size='11' fill='#15803D' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Present</text>
+<rect x='753.9354838709676' y='446' width='35' height='22' rx='11' fill='#F3F4F6'/>
+<text x='771.4354838709676' y='461' font-size='11' fill='#4B5563' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Bon</text>
+<text x='930.0645161290321' y='462' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>K. Mensah</text>
+<text x='1211.8709677419354' y='462' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>10:32</text>
+<rect x='286' y='476' width='1092' height='38' rx='0' fill='#F9FAFB'/>
+<line x1='286' y1='514' x2='1378' y2='514' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='500' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0013</text>
+<rect x='542.5806451612902' y='484' width='63' height='22' rx='11' fill='#DCFCE7'/>
+<text x='574.0806451612902' y='499' font-size='11' fill='#15803D' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Present</text>
+<rect x='753.9354838709676' y='484' width='63' height='22' rx='11' fill='#F3F4F6'/>
+<text x='785.4354838709676' y='499' font-size='11' fill='#4B5563' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Degrade</text>
+<text x='930.0645161290321' y='500' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>A. Lawson</text>
+<text x='1211.8709677419354' y='500' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>10:28</text>
+<rect x='286' y='514' width='1092' height='38' rx='0' fill='#FFFFFF'/>
+<line x1='286' y1='552' x2='1378' y2='552' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='538' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0088</text>
+<rect x='542.5806451612902' y='522' width='56' height='22' rx='11' fill='#FEE2E2'/>
+<text x='570.5806451612902' y='537' font-size='11' fill='#B91C1C' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Absent</text>
+<rect x='753.9354838709676' y='522' width='21' height='22' rx='11' fill='#F3F4F6'/>
+<text x='764.4354838709676' y='537' font-size='11' fill='#4B5563' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>-</text>
+<text x='930.0645161290321' y='538' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>K. Mensah</text>
+<text x='1211.8709677419354' y='538' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>10:15</text>
+<rect x='286' y='552' width='1092' height='38' rx='0' fill='#F9FAFB'/>
+<line x1='286' y1='590' x2='1378' y2='590' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='576' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0201</text>
+<rect x='542.5806451612902' y='560' width='63' height='22' rx='11' fill='#DCFCE7'/>
+<text x='574.0806451612902' y='575' font-size='11' fill='#15803D' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Present</text>
+<rect x='753.9354838709676' y='560' width='35' height='22' rx='11' fill='#F3F4F6'/>
+<text x='771.4354838709676' y='575' font-size='11' fill='#4B5563' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Bon</text>
+<text x='930.0645161290321' y='576' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>E. Agbeko</text>
+<text x='1211.8709677419354' y='576' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>09:58</text>
+<rect x='286' y='590' width='1092' height='38' rx='0' fill='#FFFFFF'/>
+<line x1='286' y1='628' x2='1378' y2='628' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='614' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0202</text>
+<rect x='542.5806451612902' y='598' width='98' height='22' rx='11' fill='#FEF3C7'/>
+<text x='591.5806451612902' y='613' font-size='11' fill='#B45309' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Hors service</text>
+<rect x='753.9354838709676' y='598' width='28' height='22' rx='11' fill='#F3F4F6'/>
+<text x='767.9354838709676' y='613' font-size='11' fill='#4B5563' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>HS</text>
+<text x='930.0645161290321' y='614' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>E. Agbeko</text>
+<text x='1211.8709677419354' y='614' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>09:44</text>
+<rect x='268' y='720' width='180' height='38' rx='6' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='358.0' y='744.0' font-size='13' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Exporter la liste</text>
+<rect x='464' y='720' width='220' height='38' rx='6' fill='#B91C1C'/>
+<text x='574.0' y='744.0' font-size='13' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Cloturer la campagne</text>
+</svg>

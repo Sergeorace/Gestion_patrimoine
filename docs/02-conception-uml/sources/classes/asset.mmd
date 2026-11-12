@@ -1,0 +1,88 @@
+%% Diagramme de classes - asset-service (asset_db)
+classDiagram
+    class Bien {
+        +uuid id
+        +string codeInventaire UK
+        +string uuid UK
+        +string designation
+        +text description
+        +uuid categorieId
+        +string typeSpecifique
+        +jsonb caracteristiques
+        +date dateAcquisition
+        +string modeAcquisition
+        +decimal valeurAcquisition
+        +string devise
+        +uuid structureId
+        +uuid siteId
+        +uuid localisationId
+        +string etat
+        +string statut
+        +uuid creePar
+        +timestamps
+        +deleted_at
+    }
+    class CaracteristiqueBien {
+        +uuid id
+        +uuid bienId FK
+        +string cle
+        +string valeur
+    }
+    class PhotoBien {
+        +uuid id
+        +uuid bienId FK
+        +string chemin
+        +string legende
+        +boolean principale
+        +datetime ajouteLe
+    }
+    class SpecifiqueImmeuble {
+        +uuid bienId PK,FK
+        +decimal superficie
+        +string referenceCadastrale
+        +string titreFoncier
+        +decimal latitude
+        +decimal longitude
+    }
+    class SpecifiqueVehicule {
+        +uuid bienId PK,FK
+        +string immatriculation UK
+        +string chassis
+        +string marque
+        +string modele
+        +integer annee
+        +integer kilometrage
+    }
+    class SpecifiqueInformatique {
+        +uuid bienId PK,FK
+        +string numeroSerie UK
+        +string configuration
+        +string os
+        +string processeur
+        +integer ramGo
+    }
+    class ImportLot {
+        +uuid id
+        +string nomFichier
+        +uuid lancePar
+        +integer totalLignes
+        +integer lignesValides
+        +integer lignesEnErreur
+        +string statut
+        +datetime termineLe
+    }
+    class ImportAnomalie {
+        +uuid id
+        +uuid importLotId FK
+        +integer ligne
+        +string champ
+        +string valeur
+        +string message
+    }
+
+    Bien "1" --> "n" CaracteristiqueBien
+    Bien "1" --> "n" PhotoBien
+    Bien "1" --> "0..1" SpecifiqueImmeuble
+    Bien "1" --> "0..1" SpecifiqueVehicule
+    Bien "1" --> "0..1" SpecifiqueInformatique
+    ImportLot "1" --> "n" ImportAnomalie

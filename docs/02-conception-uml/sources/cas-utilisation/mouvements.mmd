@@ -1,0 +1,25 @@
+%% Cas d'utilisation - Module Mouvements et affectations (movement-service)
+flowchart LR
+    subgraph Acteurs
+        RS[Responsable de structure]
+        GC[Gestionnaire central]
+    end
+
+    subgraph MovementService["movement-service"]
+        CU05[CU-05 Affecter / transferer / sortir]
+        CU05a[Demander une affectation]
+        CU05b[Demander un transfert]
+        CU05c[Valider / rejeter une demande]
+        CU05d[Declarer une entree de bien]
+        CU05e["Declarer une sortie (reforme, cession, rebut, perte, vol, destruction)"]
+        CU05f[Consulter l'historique des mouvements]
+    end
+
+    RS --> CU05
+    GC --> CU05
+    CU05 --> CU05a
+    CU05 --> CU05b
+    CU05 --> CU05c
+    CU05 --> CU05d
+    CU05 --> CU05e
+    CU05 --> CU05f

@@ -1,0 +1,36 @@
+%% Diagramme de classes - document-service (document_db)
+classDiagram
+    class Document {
+        +uuid id
+        +string entiteType
+        +uuid entiteId
+        +string typeDocument
+        +string nomFichier
+        +string cheminStockage
+        +string mime
+        +bigint tailleOctets
+        +string hashSha256
+        +uuid uploadePar
+        +datetime uploadeLe
+        +timestamps
+    }
+    class VersionDocument {
+        +uuid id
+        +uuid documentId FK
+        +integer version
+        +string cheminStockage
+        +string nomFichier
+        +bigint tailleOctets
+        +uuid creePar
+        +datetime creeLe
+    }
+    class RegleAcces {
+        +uuid id
+        +string entiteType
+        +string roleMin
+        +boolean lecture
+        +boolean ecriture
+    }
+
+    Document "1" --> "n" VersionDocument : historique
+    Document ..> RegleAcces : controle acces

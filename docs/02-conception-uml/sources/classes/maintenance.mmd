@@ -1,0 +1,56 @@
+%% Diagramme de classes - maintenance-service (maintenance_db)
+classDiagram
+    class PlanMaintenance {
+        +uuid id
+        +uuid bienId
+        +string type
+        +text description
+        +integer periodiciteMois
+        +date prochaineEcheance
+        +boolean actif
+        +timestamps
+    }
+    class Intervention {
+        +uuid id
+        +uuid bienId
+        +string type
+        +string statut
+        +text description
+        +date datePrevue
+        +date dateRealisee
+        +uuid agentId
+        +uuid prestataireId
+        +decimal coutMainOeuvre
+        +decimal coutPieces
+        +text compteRendu
+        +timestamps
+    }
+    class Panne {
+        +uuid id
+        +uuid bienId
+        +uuid declarePar
+        +text description
+        +string gravite
+        +datetime declareLe
+        +uuid interventionId FK
+    }
+    class Prestataire {
+        +uuid id
+        +string nom
+        +string specialite
+        +string contact
+        +text adresse
+        +boolean actif
+    }
+    class PieceIntervention {
+        +uuid id
+        +uuid interventionId FK
+        +string designation
+        +decimal cout
+        +integer quantite
+    }
+
+    PlanMaintenance --> Intervention : genere ordres
+    Panne --> Intervention : traitee par
+    Intervention --> Prestataire : realisee par
+    Intervention "1" --> "n" PieceIntervention : consomme

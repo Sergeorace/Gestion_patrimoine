@@ -1,0 +1,27 @@
+%% Cas d'utilisation - Module Reporting et tableaux de bord (reporting-service)
+flowchart LR
+    subgraph Acteurs
+        DEC[Decideur]
+        GC[Gestionnaire central]
+        RS[Responsable de structure]
+        CM[Comptable matieres]
+        AUD[Auditeur / Controleur]
+    end
+
+    subgraph ReportingService["reporting-service"]
+        CU10[CU-10 Reporting]
+        CU10a[Consulter le tableau de bord national]
+        CU10b[Generer un etat standard]
+        CU10c[Exporter PDF / Excel / CSV]
+        CU10d[Filtrer et personnaliser]
+    end
+
+    DEC --> CU10
+    GC --> CU10
+    RS --> CU10
+    CM --> CU10
+    AUD --> CU10
+    CU10 --> CU10a
+    CU10 --> CU10b
+    CU10 --> CU10c
+    CU10 --> CU10d

@@ -1,0 +1,56 @@
+%% Diagramme de classes - reporting-service (reporting_db)
+classDiagram
+    class AgregatBien {
+        +uuid id
+        +date dateRef
+        +string categorie
+        +string structure
+        +string region
+        +integer nombre
+        +decimal valeurTotale
+        +timestamps
+    }
+    class AgregatMouvement {
+        +uuid id
+        +date dateRef
+        +string typeMouvement
+        +string structure
+        +integer nombre
+        +decimal valeur
+        +timestamps
+    }
+    class AgregatInventaire {
+        +uuid id
+        +uuid campagneId
+        +date dateRef
+        +integer attendus
+        +integer presents
+        +integer manquants
+        +integer excdentaires
+        +decimal tauxCouverture
+        +timestamps
+    }
+    class AgregatMaintenance {
+        +uuid id
+        +date dateRef
+        +string type
+        +integer nombre
+        +decimal coutTotal
+        +decimal delaiMoyenHeures
+        +timestamps
+    }
+    class RapportGenere {
+        +uuid id
+        +string typeRapport
+        +jsonb parametres
+        +string format
+        +string cheminFichier
+        +uuid generePar
+        +datetime genereLe
+        +bigint taille
+    }
+
+    AgregatBien ..> RapportGenere : source tableaux de bord
+    AgregatMouvement ..> RapportGenere
+    AgregatInventaire ..> RapportGenere
+    AgregatMaintenance ..> RapportGenere

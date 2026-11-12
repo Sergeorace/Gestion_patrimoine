@@ -1,0 +1,59 @@
+%% MLD - movement_db (PostgreSQL)
+erDiagram
+    MOUVEMENTS {
+        uuid id PK
+        string reference UK
+        string type
+        string statut
+        uuid bien_id
+        uuid structure_source_id
+        uuid structure_dest_id
+        uuid site_dest_id
+        text motif
+        uuid motif_sortie_id
+        uuid demandeur_id
+        uuid valideur_id
+        integer niveau_validation
+        date date_demande
+        date date_effet
+        timestamp date_validation
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+    VALIDATIONS {
+        uuid id PK
+        uuid mouvement_id FK
+        integer niveau
+        string decision
+        text commentaire
+        uuid valideur_id
+        timestamp date_decision
+        timestamp created_at
+    }
+    MOTIFS_SORTIE {
+        uuid id PK
+        string code UK
+        string libelle
+        boolean actif
+        timestamp created_at
+    }
+    PIECES_MOUVEMENT {
+        uuid id PK
+        uuid mouvement_id FK
+        uuid document_id
+        string type_piece
+        timestamp created_at
+    }
+    HISTORIQUES_BIENS {
+        uuid id PK
+        uuid bien_id
+        uuid mouvement_id FK
+        string action
+        jsonb avant
+        jsonb apres
+        timestamp date
+    }
+    MOUVEMENTS ||--o{ VALIDATIONS : approuve
+    MOUVEMENTS ||--o{ PIECES_MOUVEMENT : justifie
+    MOUVEMENTS ||--o{ HISTORIQUES_BIENS : trace

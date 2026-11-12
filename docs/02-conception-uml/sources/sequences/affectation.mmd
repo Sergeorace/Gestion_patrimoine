@@ -1,0 +1,41 @@
+%% Diagramme de sequence - Affectation d'un bien (CU-05) - scenario nominal du CDC
+sequenceDiagram
+    autonumber
+    actor RS as Responsable structure
+    actor GC as Gestionnaire central
+    participant W as web-app
+    participant G as api-gateway
+    participant M as movement-service
+    participant S as asset-service
+    participant O as organisation-service
+    participant D as document-service
+    participant DBm as movement_db
+    participant DBa as asset_db
+    participant N as notification-service
+
+    Note over RS: Pre-conditions : bien "Disponible", droit d'affectation
+    RS->>W: Selectionne bien + structure destinataire + motif + pieces
+    W->>G: POST /api/v1/movements (type=affectation)
+    G->>M: Creation demande
+    M->>S: GET /api/v1/assets/{id} (etat = Disponible ?)
+    S-->>M: Bien disponible
+    M->>O: GET /api/v1/structures/{dest}
+    O-->>M: Structure destinataire valide
+    M->>DBm: INSERT mouvement statut=En attente
+    M->>N: Notification "demande a valider" -> Gestionnaire central
+    N-->>GC: Alerte
+    GC->>W: Ouvre la demande, consulte pieces
+    W->>D: GET documents associes
+    D-->>W: Pieces jointes
+    GC->>W: Valide la demande
+    W->>G: POST /api/v1/movements/{id}/validate
+    G->>M: Validation
+    M->>DBm: UPDATE statut=Validee
+    M->>S: POST /api/v1/assets/{id}/affectation (structure_dest, site)
+    S->>DBa: UPDATE asset : structure_id, statut=Affecte
+    M->>N: Evenement "bien affecte" (RabbitMQ)
+    N-->>RS: Notification affectation executee
+    N-->>GC: Confirmation
+    M-->>G: 200 OK
+    G-->>W: Demande cloturee
+    W-->>RS: Historique mis a jour

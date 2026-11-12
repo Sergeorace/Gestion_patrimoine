@@ -1,0 +1,71 @@
+%% MLD - inventory_db (PostgreSQL)
+erDiagram
+    CAMPAGNES {
+        uuid id PK
+        string code UK
+        string libelle
+        uuid structure_id
+        uuid site_id
+        uuid categorie_id
+        date date_debut
+        date date_fin
+        string statut
+        uuid cree_par
+        timestamp cloture_le
+        timestamp created_at
+        timestamp updated_at
+    }
+    EQUIPES {
+        uuid id PK
+        uuid campagne_id FK
+        string nom
+        text role
+        timestamp created_at
+    }
+    MEMBRES_EQUIPE {
+        uuid id PK
+        uuid equipe_id FK
+        uuid agent_id
+        string role
+        timestamp created_at
+    }
+    CONSTATES {
+        uuid id PK
+        uuid campagne_id FK
+        uuid bien_id
+        boolean present
+        string etat_constate
+        text commentaire
+        uuid agent_id
+        timestamp date_constate
+        numeric latitude
+        numeric longitude
+        boolean synchronise
+        timestamp created_at
+    }
+    ECARTS {
+        uuid id PK
+        uuid campagne_id FK
+        uuid bien_id
+        string type
+        string statut_traitement
+        text resolution
+        timestamp created_at
+        timestamp updated_at
+    }
+    RAPPORTS_RECONCILIATION {
+        uuid id PK
+        uuid campagne_id FK
+        integer total_attendus
+        integer total_presents
+        integer manquants
+        integer excdentaires
+        integer degrades
+        numeric taux_couverture
+        timestamp genere_le
+    }
+    CAMPAGNES ||--o{ EQUIPES : compose
+    EQUIPES ||--o{ MEMBRES_EQUIPE : contient
+    CAMPAGNES ||--o{ CONSTATES : collecte
+    CAMPAGNES ||--o{ ECARTS : detecte
+    CAMPAGNES ||--|| RAPPORTS_RECONCILIATION : produit

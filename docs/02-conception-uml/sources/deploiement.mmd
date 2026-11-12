@@ -1,0 +1,54 @@
+%% Diagramme de deploiement - Conteneurs Docker et infrastructure
+flowchart TB
+    subgraph Hote["Hote - Serveur Linux (Docker Engine)"]
+        subgraph Net["Reseau Docker : patrimoine-net (bridge)"]
+            NGX[api-gateway<br/>nginx:alpine<br/>ports 80/443]
+            WEB[web-app<br/>Laravel + Inertia/Vue<br/>php-fpm]
+            AUTH[auth-service]
+            ORG[organisation-service]
+            AST[asset-service]
+            MVT[movement-service]
+            INV[inventory-service]
+            MNT[maintenance-service]
+            VAL[valuation-service]
+            DOC[document-service]
+            NTF[notification-service]
+            RPT[reporting-service]
+            PG[(postgres:16-alpine<br/>volume pgdata)]
+            RAB[(rabbitmq:3-management)]
+            RED[(redis:7-alpine)]
+        end
+        VOL[(volume documents<br/>photos + fichiers)]
+        BKP[(volume sauvegardes<br/>pg_dump quotidien)]
+    end
+
+    CLI[Postes clients<br/>bureau / tablette / mobile] -->|HTTPS| NGX
+    NGX --> WEB
+    NGX --> AUTH
+    NGX --> ORG
+    NGX --> AST
+    NGX --> MVT
+    NGX --> INV
+    NGX --> MNT
+    NGX --> VAL
+    NGX --> DOC
+    NGX --> NTF
+    NGX --> RPT
+    WEB --> RED
+    AUTH --> PG
+    ORG --> PG
+    AST --> PG
+    MVT --> PG
+    INV --> PG
+    MNT --> PG
+    VAL --> PG
+    DOC --> PG
+    NTF --> PG
+    RPT --> PG
+    AST --> RAB
+    MVT --> RAB
+    INV --> RAB
+    RAB --> NTF
+    RAB --> RPT
+    DOC --> VOL
+    PG -.pg_dump.-> BKP

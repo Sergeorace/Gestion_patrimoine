@@ -1,0 +1,32 @@
+%% Diagramme d'activite - Campagne d'inventaire et recolement
+flowchart TD
+    A([Debut : creation campagne]) --> B[Definition perimetre : structure / site / categorie]
+    B --> C[Composition des equipes + calendrier]
+    C --> D[Statut = Planifiee - notification agents]
+    D --> E[Statut = En cours]
+    E --> F[Telechargement liste biens sur PWA]
+    F --> G[Cache local IndexedDB]
+    G --> H[Terrain : scan QR / saisie constats]
+    H --> I{Reseau disponible ?}
+    I -- Oui --> J[POST constat -> inventory-service]
+    I -- Non --> K[Stockage local + file d'attente]
+    K --> L{Connexion retablie ?}
+    L -- Non --> H
+    L -- Oui --> M[Sync : envoi constats en lot]
+    J --> N[INSERT constat : present / etat / agent / date]
+    M --> N
+    N --> H
+    H --> O{Tous les biens traites ?}
+    O -- Non --> H
+    O -- Oui --> P[Detection ecarts : manquants / excédentaires / degradés]
+    P --> Q[Calcul taux de couverture]
+    Q --> R{Validation gestionnaire ?}
+    R -- Non --> S[Campagne reste En cours - corrections]
+    S --> H
+    R -- Oui --> T[Statut = Cloturee - verrouillage]
+    T --> U[Archivage resultats]
+    U --> V[Generation rapport de recolement RG-08]
+    V --> W[Notifications + evenements]
+    W --> X([Fin])
+
+    style X fill:#dfd

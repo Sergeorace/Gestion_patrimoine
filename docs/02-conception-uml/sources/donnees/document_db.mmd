@@ -1,0 +1,37 @@
+%% MLD - document_db (PostgreSQL)
+erDiagram
+    DOCUMENTS {
+        uuid id PK
+        string entite_type
+        uuid entite_id
+        string type_document
+        string nom_fichier
+        string chemin_stockage
+        string mime
+        bigint taille_octets
+        string hash_sha256
+        uuid uploade_par
+        timestamp uploade_le
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+    VERSIONS_DOCUMENTS {
+        uuid id PK
+        uuid document_id FK
+        integer version
+        string chemin_stockage
+        string nom_fichier
+        bigint taille_octets
+        uuid cree_par
+        timestamp cree_le
+    }
+    REGLES_ACCES {
+        uuid id PK
+        string entite_type
+        string role_min
+        boolean lecture
+        boolean ecriture
+        timestamp created_at
+    }
+    DOCUMENTS ||--o{ VERSIONS_DOCUMENTS : historise

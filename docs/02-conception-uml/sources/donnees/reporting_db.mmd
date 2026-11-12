@@ -1,0 +1,51 @@
+%% MLD - reporting_db (PostgreSQL - lecture agreegee)
+erDiagram
+    AGREGATS_BIENS {
+        uuid id PK
+        date date_ref
+        string categorie
+        string structure
+        string region
+        integer nombre
+        numeric valeur_totale
+        timestamp created_at
+    }
+    AGREGATS_MOUVEMENTS {
+        uuid id PK
+        date date_ref
+        string type_mouvement
+        string structure
+        integer nombre
+        numeric valeur
+        timestamp created_at
+    }
+    AGREGATS_INVENTAIRES {
+        uuid id PK
+        uuid campagne_id
+        date date_ref
+        integer attendus
+        integer presents
+        integer manquants
+        integer excdentaires
+        numeric taux_couverture
+        timestamp created_at
+    }
+    AGREGATS_MAINTENANCE {
+        uuid id PK
+        date date_ref
+        string type
+        integer nombre
+        numeric cout_total
+        numeric delai_moyen_heures
+        timestamp created_at
+    }
+    RAPPORTS_GENERES {
+        uuid id PK
+        string type_rapport
+        jsonb parametres
+        string format
+        string chemin_fichier
+        uuid genere_par
+        timestamp genere_le
+        bigint taille
+    }

@@ -1,0 +1,84 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='900' viewBox='0 0 1440 900'>
+<rect width='1440' height='900' fill='#F3F4F6'/>
+<rect x='0' y='0' width='240' height='900' rx='0' fill='#0B2545'/>
+<rect x='0' y='0' width='240' height='64' rx='0' fill='#13315C'/>
+<text x='20' y='40' font-size='15' fill='#FFFFFF' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>PATERNITE</text>
+<text x='20' y='57' font-size='11' fill='#93C5FD' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Etat togolais</text>
+<text x='20' y='92' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⌂</text>
+<text x='46' y='92' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Tableau de bord</text>
+<rect x='0' y='114' width='240' height='40' rx='0' fill='#13315C'/>
+<rect x='0' y='114' width='3' height='40' rx='0' fill='#B8860B'/>
+<text x='20' y='136' font-size='15' fill='#FFFFFF' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>▦</text>
+<text x='46' y='136' font-size='13' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Biens</text>
+<text x='20' y='180' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⇄</text>
+<text x='46' y='180' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Mouvements</text>
+<text x='20' y='224' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>☰</text>
+<text x='46' y='224' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Inventaires</text>
+<text x='20' y='268' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚒</text>
+<text x='46' y='268' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Maintenance</text>
+<text x='20' y='312' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>¤</text>
+<text x='46' y='312' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valorisation</text>
+<text x='20' y='356' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>◔</text>
+<text x='46' y='356' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rapports</text>
+<text x='20' y='400' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚙</text>
+<text x='46' y='400' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Administration</text>
+<line x1='20' y1='840' x2='220' y2='840' stroke='#1E3A5F' stroke-width='1'/>
+<text x='20' y='866' font-size='11' fill='#64748B' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>v1.0 - 2026</text>
+<rect x='240' y='0' width='1200' height='56' rx='0' fill='#FFFFFF'/>
+<line x1='240' y1='56' x2='1440' y2='56' stroke='#D1D5DB' stroke-width='1'/>
+<text x='268' y='35' font-size='20' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Fiche bien - PAT-2026-0012</text>
+<rect x='1020' y='14' width='220' height='28' rx='6' fill='#F3F4F6'/>
+<text x='1040' y='33' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rechercher un bien, un mouvement...</text>
+<circle cx='1380' cy='28' r='14' fill='#DBEAFE'/>
+<text x='1380' y='33' font-size='13' fill='#13315C' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>A</text>
+<rect x='268' y='84' width='1132' height='150' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<rect x='286' y='104' width='110' height='110' rx='8' fill='#F3F4F6' stroke='#D1D5DB' stroke-width='1'/>
+<text x='341' y='165' font-size='30' fill='#111827' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>QR</text>
+<text x='416' y='116' font-size='22' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Toyota Land Cruiser GX 2023</text>
+<text x='416' y='140' font-size='13' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0012 - Vehicule de service</text>
+<rect x='416' y='156' width='63' height='22' rx='11' fill='#DBEAFE'/>
+<text x='447.5' y='171' font-size='11' fill='#13315C' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Affecte</text>
+<rect x='494' y='156' width='70' height='22' rx='11' fill='#DCFCE7'/>
+<text x='529.0' y='171' font-size='11' fill='#15803D' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Bon etat</text>
+<rect x='1100' y='110' width='110' height='34' rx='6' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1155.0' y='132.0' font-size='13' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Editer</text>
+<rect x='1222' y='110' width='110' height='34' rx='6' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1277.0' y='132.0' font-size='13' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Imprimer QR</text>
+<rect x='268' y='252' width='116' height='34' rx='6' fill='#1D4E89'/>
+<text x='280' y='274' font-size='13' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Informations</text>
+<text x='420' y='274' font-size='13' fill='#1D4E89' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Mouvements</text>
+<text x='544' y='274' font-size='13' fill='#1D4E89' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Maintenance</text>
+<text x='676' y='274' font-size='13' fill='#1D4E89' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Documents</text>
+<text x='792' y='274' font-size='13' fill='#1D4E89' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Photos</text>
+<line x1='268' y1='286' x2='1400' y2='286' stroke='#D1D5DB' stroke-width='1'/>
+<text x='268.0' y='328' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Designation</text>
+<text x='268.0' y='348' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Toyota Land Cruiser GX 2023</text>
+<text x='846.0' y='328' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Categorie</text>
+<text x='846.0' y='348' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Vehicule</text>
+<text x='268.0' y='380' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Immatriculation</text>
+<text x='268.0' y='400' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>TG-1234-AB</text>
+<text x='846.0' y='380' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Chassis</text>
+<text x='846.0' y='400' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>JTMBFREV8P0123456</text>
+<text x='268.0' y='432' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Acquisition</text>
+<text x='268.0' y='452' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>01/03/2024 - Achat</text>
+<text x='846.0' y='432' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valeur acquisition</text>
+<text x='846.0' y='452' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>45 000 000 FCFA</text>
+<text x='268.0' y='484' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Amortissement cumule</text>
+<text x='268.0' y='504' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>8 200 000 FCFA</text>
+<text x='846.0' y='484' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valeur nette (VNC)</text>
+<text x='846.0' y='504' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>36 800 000 FCFA</text>
+<text x='268.0' y='536' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Structure responsable</text>
+<text x='268.0' y='556' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Ministere de la Defense</text>
+<text x='846.0' y='536' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Site</text>
+<text x='846.0' y='556' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Site central de Lome</text>
+<text x='268.0' y='588' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Localisation</text>
+<text x='268.0' y='608' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Bat. B - RdC - Bureau 12</text>
+<text x='846.0' y='588' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Prochaine maintenance</text>
+<text x='846.0' y='608' font-size='14' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>15/01/2027</text>
+<rect x='268' y='690' width='160' height='38' rx='6' fill='#1D4E89'/>
+<text x='348.0' y='714.0' font-size='13' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Demander affectation</text>
+<rect x='444' y='690' width='140' height='38' rx='6' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='514.0' y='714.0' font-size='13' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Declarer panne</text>
+<rect x='600' y='690' width='140' height='38' rx='6' fill='#B91C1C'/>
+<text x='670.0' y='714.0' font-size='13' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Sortir du patrimoine</text>
+</svg>

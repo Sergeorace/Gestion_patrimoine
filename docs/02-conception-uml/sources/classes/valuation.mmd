@@ -1,0 +1,43 @@
+%% Diagramme de classes - valuation-service (valuation_db)
+classDiagram
+    class Valorisation {
+        +uuid id
+        +uuid bienId
+        +integer exercice UK
+        +decimal valeurAcquisition
+        +decimal amortissementCumule
+        +decimal vnc
+        +date dateCalcul
+        +timestamps
+    }
+    class Amortissement {
+        +uuid id
+        +uuid bienId
+        +integer exercice
+        +decimal dotation
+        +string methode
+        +decimal tauxApplique
+        +jsonb detailCalcul
+        +timestamps
+    }
+    class Reevaluation {
+        +uuid id
+        +uuid bienId
+        +date dateReevaluation
+        +decimal ancienneValeur
+        +decimal nouvelleValeur
+        +text motif
+        +uuid autorisePar
+        +timestamps
+    }
+    class ParametreCategorie {
+        +uuid categorieId PK
+        +string methode
+        +numeric taux
+        +integer dureeVieMois
+        +date dateEffet
+    }
+
+    Valorisation "1" --> "n" Amortissement : detaille par exercice
+    Reevaluation --> Valorisation : recalcule
+    ParametreCategorie ..> Amortissement : parametre calcul

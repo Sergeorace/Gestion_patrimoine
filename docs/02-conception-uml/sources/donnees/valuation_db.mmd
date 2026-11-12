@@ -1,0 +1,44 @@
+%% MLD - valuation_db (PostgreSQL)
+erDiagram
+    VALORISATIONS {
+        uuid id PK
+        uuid bien_id
+        integer exercice
+        numeric valeur_acquisition
+        numeric amortissement_cumule
+        numeric vnc
+        date date_calcul
+        timestamp created_at
+        timestamp updated_at
+    }
+    AMORTISSEMENTS {
+        uuid id PK
+        uuid bien_id
+        integer exercice
+        numeric dotation
+        string methode
+        numeric taux_applique
+        jsonb detail_calcul
+        timestamp created_at
+    }
+    REEVALUATIONS {
+        uuid id PK
+        uuid bien_id
+        date date_reevaluation
+        numeric ancienne_valeur
+        numeric nouvelle_valeur
+        text motif
+        uuid autorise_par
+        timestamp created_at
+    }
+    PARAMETRES_CATEGORIES {
+        uuid categorie_id PK
+        string methode
+        numeric taux
+        integer duree_vie_mois
+        date date_effet
+        timestamp created_at
+    }
+    VALORISATIONS ||--o{ AMORTISSEMENTS : detaille
+    REEVALUATIONS }o--|| VALORISATIONS : recalcule
+    PARAMETRES_CATEGORIES ||--o{ AMORTISSEMENTS : parametre

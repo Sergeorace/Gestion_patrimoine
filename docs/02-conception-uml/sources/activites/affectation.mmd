@@ -1,0 +1,26 @@
+%% Diagramme d'activite - Processus d'affectation / transfert d'un bien
+flowchart TD
+    A([Debut : demande d'affectation]) --> B{Bien etat = Disponible ?}
+    B -- Non --> B1[Refus : bien non disponible]
+    B1 --> Z([Fin : refus])
+    B -- Oui --> C[Verification perimetre demandeur RG-06]
+    C --> D{Droits suffisants ?}
+    D -- Non --> D1[Erreur 403]
+    D1 --> Z
+    D -- Oui --> E[movement-service : INSERT demande statut = En attente]
+    E --> F[Notification au validateur habilite]
+    F --> G{Decision du valideur}
+    G -- Rejet --> G1[Motif de rejet obligatoire]
+    G1 --> H[Notification au demandeur]
+    H --> Z2([Fin : rejetee])
+    G -- Approbation --> I[UPDATE demande statut = Validee]
+    I --> J[asset-service : UPDATE bien structure_id + site_id + statut = Affecte]
+    J --> K[mouvement_db : ecriture execution + date_effet]
+    K --> L[journal d'audit : action, avant/apres RG-07]
+    L --> M[Notifications parties prenantes]
+    M --> N[Evenement RabbitMQ : bien affecte]
+    N --> O([Fin : affectation executee])
+
+    style Z fill:#fdd
+    style Z2 fill:#fdd
+    style O fill:#dfd

@@ -1,0 +1,56 @@
+%% Diagramme de classes - movement-service (movement_db)
+classDiagram
+    class Mouvement {
+        +uuid id
+        +string reference UK
+        +string type
+        +string statut
+        +uuid bienId
+        +uuid structureSourceId
+        +uuid structureDestId
+        +uuid siteDestId
+        +text motif
+        +uuid demandeurId
+        +uuid valideurId
+        +uuid niveauValidation
+        +date dateDemande
+        +date dateEffet
+        +datetime dateValidation
+        +timestamps
+        +deleted_at
+    }
+    class Validation {
+        +uuid id
+        +uuid mouvementId FK
+        +integer niveau
+        +string decision
+        +text commentaire
+        +uuid valideurId
+        +datetime dateDecision
+    }
+    class MotifSortie {
+        +uuid id
+        +string code UK
+        +string libelle
+        +boolean actif
+    }
+    class PieceMouvement {
+        +uuid id
+        +uuid mouvementId FK
+        +uuid documentId
+        +string typePiece
+    }
+    class HistoriqueBien {
+        +uuid id
+        +uuid bienId
+        +uuid mouvementId
+        +string action
+        +jsonb avant
+        +jsonb apres
+        +datetime date
+    }
+
+    Mouvement "1" --> "n" Validation : niveau 1 / niveau 2
+    Mouvement --> MotifSortie : motif de sortie
+    Mouvement "1" --> "n" PieceMouvement : justificatifs
+    Mouvement "1" --> "n" HistoriqueBien : trace

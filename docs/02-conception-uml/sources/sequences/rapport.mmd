@@ -1,0 +1,42 @@
+%% Diagramme de sequence - Generation d'un rapport / tableau de bord (CU-10)
+sequenceDiagram
+    autonumber
+    actor U as Decideur / Gestionnaire
+    participant W as web-app
+    participant G as api-gateway
+    participant R as reporting-service
+    participant DBr as reporting_db
+    participant S as asset-service
+    participant Mv as movement-service
+    participant I as inventory-service
+    participant Mnt as maintenance-service
+    participant V as valuation-service
+
+    U->>W: Ouvre tableau de bord national
+    W->>G: GET /api/v1/reports/dashboard
+    G->>R: Requete
+    par Donnees agregees (evenements consommes)
+        R->>DBr: Lecture agregats (biens, mouvements, ecarts, maintenance)
+    end
+    R->>S: GET /api/v1/assets/stats (categories, structures, etats)
+    S-->>R: Statistiques biens
+    R->>Mv: GET /api/v1/movements/stats
+    Mv-->>R: Statistiques mouvements
+    R->>I: GET /api/v1/inventories/stats
+    I-->>R: Statistiques inventaires
+    R->>Mnt: GET /api/v1/maintenance/stats
+    Mnt-->>R: Statistiques maintenance
+    R->>V: GET /api/v1/valorisations/stats
+    V-->>R: Statistiques valorisation
+    R-->>G: JSON indicateurs + series
+    G-->>W: Tableaux de bord (Chart.js)
+    W-->>U: Vue consolidee
+    U->>W: Export "Etat des amortissements" (filtre : exercice, structure)
+    W->>G: GET /api/v1/reports/valorisation/export?format=pdf
+    G->>R: Generation rapport
+    R->>V: Donnees valorisation detaillees
+    V-->>R: Lignes amortissement
+    R->>R: Rendu PDF (DomPDF) / Excel (maatwebsite)
+    R-->>G: Fichier PDF
+    G-->>W: Flux binaire
+    W-->>U: Telechargement PDF

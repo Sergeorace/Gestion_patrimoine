@@ -1,0 +1,25 @@
+%% Cas d'utilisation - Module Maintenance (maintenance-service)
+flowchart LR
+    subgraph Acteurs
+        AM[Agent de maintenance]
+        GC[Gestionnaire central]
+        RS[Responsable de structure]
+    end
+
+    subgraph MaintenanceService["maintenance-service"]
+        CU08[CU-08 Maintenance]
+        CU08a[Creer un plan de maintenance preventive]
+        CU08b[Declarer une panne]
+        CU08c[Creer un ordre d'intervention]
+        CU08d[Suivre couts et prestataires]
+        CU08e[Consulter historique et fiabilite]
+    end
+
+    AM --> CU08
+    GC --> CU08
+    RS --> CU08
+    CU08 --> CU08a
+    CU08 --> CU08b
+    CU08 --> CU08c
+    CU08 --> CU08d
+    CU08 --> CU08e

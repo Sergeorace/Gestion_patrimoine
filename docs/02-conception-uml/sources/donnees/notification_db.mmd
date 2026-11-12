@@ -1,0 +1,46 @@
+%% MLD - notification_db (PostgreSQL)
+erDiagram
+    NOTIFICATIONS {
+        uuid id PK
+        uuid utilisateur_id
+        string type
+        string canal
+        string titre
+        text message
+        string entite_type
+        uuid entite_id
+        boolean lue
+        timestamp lue_le
+        timestamp envoyee_le
+        timestamp created_at
+    }
+    AUDIT_LOGS {
+        uuid id PK
+        uuid utilisateur_id
+        string service_source
+        string action
+        string entite
+        uuid entite_id
+        jsonb avant
+        jsonb apres
+        string ip
+        string user_agent
+        timestamp date
+    }
+    ABONNEMENTS_EVENEMENTS {
+        uuid id PK
+        string evenement
+        string service_consommateur
+        jsonb filtre
+        boolean actif
+        timestamp created_at
+    }
+    MODELES_EMAIL {
+        uuid id PK
+        string code UK
+        string sujet
+        text corps
+        boolean actif
+        timestamp created_at
+        timestamp updated_at
+    }

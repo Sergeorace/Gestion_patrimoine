@@ -1,0 +1,63 @@
+%% Diagramme de classes - auth-service (auth_db)
+classDiagram
+    class Utilisateur {
+        +uuid id
+        +string nom
+        +string prenom
+        +string email UK
+        +string motDePasseHash
+        +uuid structureId
+        +string statut
+        +boolean twoFactorActif
+        +datetime derniereConnexion
+        +integer echecsConnexion
+        +datetime verrouilleJusquA
+        +timestamps created_at, updated_at
+        +deleted_at
+    }
+    class Role {
+        +uuid id
+        +string code UK
+        +string libelle
+        +text description
+    }
+    class Permission {
+        +uuid id
+        +string code UK
+        +string module
+        +string action
+    }
+    class RoleUtilisateur {
+        +uuid utilisateurId FK
+        +uuid roleId FK
+        +datetime accordeLe
+    }
+    class PermissionRole {
+        +uuid roleId FK
+        +uuid permissionId FK
+    }
+    class JetonOAuth {
+        +uuid id
+        +uuid utilisateurId FK
+        +string tokenId UK
+        +text refreshToken
+        +datetime expireLe
+        +datetime revoqueLe
+    }
+    class JournalConnexion {
+        +uuid id
+        +uuid utilisateurId FK
+        +string ip
+        +string userAgent
+        +boolean succes
+        +datetime date
+    }
+
+    Utilisateur "n" --> "m" Role : possede
+    Role "n" --> "m" Permission : regroupe
+    Utilisateur "1" --> "n" JetonOAuth : emet
+    Utilisateur "1" --> "n" JournalConnexion : genere
+    RoleUtilisateur ..> Utilisateur
+    RoleUtilisateur ..> Role
+    PermissionRole ..> Role
+    PermissionRole ..> Permission

@@ -1,0 +1,145 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='900' viewBox='0 0 1440 900'>
+<rect width='1440' height='900' fill='#F3F4F6'/>
+<rect x='0' y='0' width='240' height='900' rx='0' fill='#0B2545'/>
+<rect x='0' y='0' width='240' height='64' rx='0' fill='#13315C'/>
+<text x='20' y='40' font-size='15' fill='#FFFFFF' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>PATERNITE</text>
+<text x='20' y='57' font-size='11' fill='#93C5FD' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Etat togolais</text>
+<rect x='0' y='70' width='240' height='40' rx='0' fill='#13315C'/>
+<rect x='0' y='70' width='3' height='40' rx='0' fill='#B8860B'/>
+<text x='20' y='92' font-size='15' fill='#FFFFFF' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⌂</text>
+<text x='46' y='92' font-size='13' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Tableau de bord</text>
+<text x='20' y='136' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>▦</text>
+<text x='46' y='136' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Biens</text>
+<text x='20' y='180' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⇄</text>
+<text x='46' y='180' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Mouvements</text>
+<text x='20' y='224' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>☰</text>
+<text x='46' y='224' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Inventaires</text>
+<text x='20' y='268' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚒</text>
+<text x='46' y='268' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Maintenance</text>
+<text x='20' y='312' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>¤</text>
+<text x='46' y='312' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valorisation</text>
+<text x='20' y='356' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>◔</text>
+<text x='46' y='356' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rapports</text>
+<text x='20' y='400' font-size='15' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>⚙</text>
+<text x='46' y='400' font-size='13' fill='#CBD5E1' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Administration</text>
+<line x1='20' y1='840' x2='220' y2='840' stroke='#1E3A5F' stroke-width='1'/>
+<text x='20' y='866' font-size='11' fill='#64748B' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>v1.0 - 2026</text>
+<rect x='240' y='0' width='1200' height='56' rx='0' fill='#FFFFFF'/>
+<line x1='240' y1='56' x2='1440' y2='56' stroke='#D1D5DB' stroke-width='1'/>
+<text x='268' y='35' font-size='20' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Tableau de bord</text>
+<rect x='1020' y='14' width='220' height='28' rx='6' fill='#F3F4F6'/>
+<text x='1040' y='33' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Rechercher un bien, un mouvement...</text>
+<circle cx='1380' cy='28' r='14' fill='#DBEAFE'/>
+<text x='1380' y='33' font-size='13' fill='#13315C' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>A</text>
+<text x='268' y='100' font-size='22' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Bonjour, Komi Mensah</text>
+<text x='268' y='124' font-size='13' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Voici l'etat du patrimoine national au 12/11/2026</text>
+<rect x='268' y='148' width='268' height='104' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='286' y='174' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>BIENS ENREGISTRES</text>
+<text x='286' y='206' font-size='26' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>12 480</text>
+<text x='286' y='232' font-size='12' fill='#15803D' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>▲ +3,2%</text>
+<rect x='552' y='148' width='268' height='104' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='570' y='174' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>VALEUR TOTALE</text>
+<text x='570' y='206' font-size='26' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>84,2 Mds FCFA</text>
+<text x='570' y='232' font-size='12' fill='#15803D' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>▲ +1,8%</text>
+<rect x='836' y='148' width='268' height='104' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='854' y='174' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>BIENS AFFECTES</text>
+<text x='854' y='206' font-size='26' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>9 312</text>
+<text x='854' y='232' font-size='12' fill='#15803D' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>▲ 75% du parc</text>
+<rect x='1120' y='148' width='268' height='104' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1138' y='174' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>EN MAINTENANCE</text>
+<text x='1138' y='206' font-size='26' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>214</text>
+<text x='1138' y='232' font-size='12' fill='#15803D' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>▲ +12</text>
+<rect x='268' y='272' width='700' height='300' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='286' y='300' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Repartition par categorie</text>
+<text x='308' y='334' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Vehicules</text>
+<rect x='428' y='320' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='320' width='121.6' height='16' rx='3' fill='#1D4E89'/>
+<text x='828' y='334' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>32%</text>
+<text x='308' y='368' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Immobilier</text>
+<rect x='428' y='354' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='354' width='98.8' height='16' rx='3' fill='#13315C'/>
+<text x='828' y='368' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>26%</text>
+<text x='308' y='402' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Informatique</text>
+<rect x='428' y='388' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='388' width='68.4' height='16' rx='3' fill='#3B82F6'/>
+<text x='828' y='402' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>18%</text>
+<text x='308' y='436' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Mobilier</text>
+<rect x='428' y='422' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='422' width='45.6' height='16' rx='3' fill='#B8860B'/>
+<text x='828' y='436' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>12%</text>
+<text x='308' y='470' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Equipements</text>
+<rect x='428' y='456' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='456' width='30.4' height='16' rx='3' fill='#15803D'/>
+<text x='828' y='470' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>8%</text>
+<text x='308' y='504' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Autres</text>
+<rect x='428' y='490' width='380' height='16' rx='3' fill='#F3F4F6'/>
+<rect x='428' y='490' width='15.2' height='16' rx='3' fill='#D1D5DB'/>
+<text x='828' y='504' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>4%</text>
+<rect x='984' y='272' width='452' height='300' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1002' y='300' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Par structure (top 5)</text>
+<text x='1004' y='344' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-DEF</text>
+<rect x='1118' y='330' width='260' height='18' rx='3' fill='#F3F4F6'/>
+<rect x='1118' y='330' width='111.42857142857143' height='18' rx='3' fill='#1D4E89'/>
+<text x='1388' y='344' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>2 400</text>
+<text x='1004' y='386' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-FIN</text>
+<rect x='1118' y='372' width='260' height='18' rx='3' fill='#F3F4F6'/>
+<rect x='1118' y='372' width='88.21428571428571' height='18' rx='3' fill='#1D4E89'/>
+<text x='1388' y='386' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>1 900</text>
+<text x='1004' y='428' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-EDU</text>
+<rect x='1118' y='414' width='260' height='18' rx='3' fill='#F3F4F6'/>
+<rect x='1118' y='414' width='69.64285714285714' height='18' rx='3' fill='#1D4E89'/>
+<text x='1388' y='428' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>1 500</text>
+<text x='1004' y='470' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-SANTE</text>
+<rect x='1118' y='456' width='260' height='18' rx='3' fill='#F3F4F6'/>
+<rect x='1118' y='456' width='51.07142857142857' height='18' rx='3' fill='#1D4E89'/>
+<text x='1388' y='470' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>1 100</text>
+<text x='1004' y='512' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Autres</text>
+<rect x='1118' y='498' width='260' height='18' rx='3' fill='#F3F4F6'/>
+<rect x='1118' y='498' width='260.0' height='18' rx='3' fill='#1D4E89'/>
+<text x='1388' y='512' font-size='12' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>5 600</text>
+<rect x='268' y='588' width='700' height='264' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='286' y='616' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Mouvements recents</text>
+<rect x='286' y='626' width='664' height='36' rx='8' fill='#0B2545'/>
+<text x='296' y='648.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Ref</text>
+<text x='434.33333333333337' y='648.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Type</text>
+<text x='628.0' y='648.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Bien</text>
+<text x='821.6666666666666' y='648.0' font-size='11' fill='#FFFFFF' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Date</text>
+<rect x='286' y='662' width='664' height='40' rx='0' fill='#FFFFFF'/>
+<line x1='286' y1='702' x2='950' y2='702' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='686.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MVT-1042</text>
+<text x='434.33333333333337' y='686.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Affectation</text>
+<text x='628.0' y='686.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0012</text>
+<text x='821.6666666666666' y='686.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>12/11 09:14</text>
+<rect x='286' y='702' width='664' height='40' rx='0' fill='#F9FAFB'/>
+<line x1='286' y1='742' x2='950' y2='742' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='726.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MVT-1041</text>
+<text x='434.33333333333337' y='726.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Sortie</text>
+<text x='628.0' y='726.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0088</text>
+<text x='821.6666666666666' y='726.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>12/11 08:40</text>
+<rect x='286' y='742' width='664' height='40' rx='0' fill='#FFFFFF'/>
+<line x1='286' y1='782' x2='950' y2='782' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='766.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MVT-1040</text>
+<text x='434.33333333333337' y='766.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Transfert</text>
+<text x='628.0' y='766.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0201</text>
+<text x='821.6666666666666' y='766.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>11/11 16:22</text>
+<rect x='286' y='782' width='664' height='40' rx='0' fill='#F9FAFB'/>
+<line x1='286' y1='822' x2='950' y2='822' stroke='#D1D5DB' stroke-width='1'/>
+<text x='296' y='806.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>MVT-1039</text>
+<text x='434.33333333333337' y='806.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Entree</text>
+<text x='628.0' y='806.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0210</text>
+<text x='821.6666666666666' y='806.0' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>11/11 14:05</text>
+<rect x='984' y='588' width='452' height='264' rx='10' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='1002' y='616' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Alertes</text>
+<rect x='1002' y='630' width='416' height='40' rx='8' fill='#FEF3C7'/>
+<text x='1018' y='655' font-size='15' fill='#B45309' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>!</text>
+<text x='1046' y='655' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>3 maintenances preventives echues</text>
+<rect x='1002' y='680' width='416' height='40' rx='8' fill='#FEF3C7'/>
+<text x='1018' y='705' font-size='15' fill='#B45309' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>!</text>
+<text x='1046' y='705' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Campagne inventaire S3 non cloturee</text>
+<rect x='1002' y='730' width='416' height='40' rx='8' fill='#DBEAFE'/>
+<text x='1018' y='755' font-size='15' fill='#13315C' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>!</text>
+<text x='1046' y='755' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>5 demandes d'affectation en attente</text>
+<rect x='1002' y='780' width='416' height='40' rx='8' fill='#FEE2E2'/>
+<text x='1018' y='805' font-size='15' fill='#B91C1C' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>!</text>
+<text x='1046' y='805' font-size='12' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Garantie expiree : 12 equipements</text>
+</svg>

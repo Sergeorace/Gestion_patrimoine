@@ -1,0 +1,24 @@
+%% Cas d'utilisation - Module Notifications et audit (notification-service)
+flowchart LR
+    subgraph Acteurs
+        TOUT["Tout utilisateur"]
+        AUD[Auditeur / Controleur]
+        ADMIN[Administrateur systeme]
+    end
+
+    subgraph NotificationService["notification-service"]
+        CU11[CU-11 Notifications et audit]
+        CU11a[Recevoir notifications internes et email]
+        CU11b[Consulter le journal d'audit]
+        CU11c[Filtrer par utilisateur / action / periode]
+        CU11d[Consulter valeurs avant / apres]
+    end
+
+    TOUT --> CU11a
+    AUD --> CU11b
+    ADMIN --> CU11b
+    GC2[Gestionnaire central] --> CU11b
+    CU11 --> CU11a
+    CU11 --> CU11b
+    CU11 --> CU11c
+    CU11 --> CU11d

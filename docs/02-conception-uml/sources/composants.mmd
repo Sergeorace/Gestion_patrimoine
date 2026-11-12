@@ -1,0 +1,67 @@
+%% Diagramme de composants - Architecture micro-services
+flowchart TB
+    subgraph Clients
+        NAV[Navigateurs web<br/>desktop / tablette / mobile]
+        PWA[PWA inventaire<br/>mode hors-ligne]
+    end
+
+    subgraph Edge["Couche d'edge"]
+        NGX[Nginx - API Gateway<br/>routage / JWT / rate-limit / CORS / TLS]
+    end
+
+    subgraph App["Couche applicative - conteneurs Docker"]
+        WEB[web-app<br/>Laravel + Inertia.js + Vue 3 + Tailwind]
+        AUTH[auth-service]
+        ORG[organisation-service]
+        AST[asset-service]
+        MVT[movement-service]
+        INV[inventory-service]
+        MNT[maintenance-service]
+        VAL[valuation-service]
+        DOC[document-service]
+        NTF[notification-service]
+        RPT[reporting-service]
+    end
+
+    subgraph Data["Couche donnees"]
+        PG[(PostgreSQL 16<br/>1 base logique par service)]
+        RAB[(RabbitMQ<br/>bus d'evenements)]
+        RED[(Redis<br/>cache / files / sessions)]
+        STK[[Stockage fichiers<br/>documents + photos]]
+    end
+
+    NAV --> NGX
+    PWA --> NGX
+    NGX --> WEB
+    NGX --> AUTH
+    NGX --> ORG
+    NGX --> AST
+    NGX --> MVT
+    NGX --> INV
+    NGX --> MNT
+    NGX --> VAL
+    NGX --> DOC
+    NGX --> NTF
+    NGX --> RPT
+
+    AUTH -.JWT.-> NGX
+    WEB --> RED
+    AST --> PG
+    ORG --> PG
+    MVT --> PG
+    INV --> PG
+    MNT --> PG
+    VAL --> PG
+    DOC --> PG
+    NTF --> PG
+    RPT --> PG
+    DOC --> STK
+
+    AST -.evenements.-> RAB
+    MVT -.evenements.-> RAB
+    INV -.evenements.-> RAB
+    MNT -.evenements.-> RAB
+    VAL -.evenements.-> RAB
+    RAB -.consomme.-> NTF
+    RAB -.consomme.-> RPT
+    RAB -.consomme.-> VAL

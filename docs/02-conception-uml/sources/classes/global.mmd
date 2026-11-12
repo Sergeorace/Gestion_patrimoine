@@ -1,0 +1,156 @@
+%% Diagramme de classes - Vue globale du domaine (micro-services)
+classDiagram
+    direction LR
+
+    class Utilisateur {
+        +uuid id
+        +string nom
+        +string email
+        +string motDePasseHash
+        +uuid structureId
+        +string statut
+        +boolean twoFactor
+    }
+    class Role {
+        +uuid id
+        +string code
+        +string libelle
+    }
+    class Permission {
+        +uuid id
+        +string code
+        +string module
+    }
+    class Structure {
+        +uuid id
+        +string code
+        +string libelle
+        +string type
+        +uuid parentId
+    }
+    class Site {
+        +uuid id
+        +string code
+        +string libelle
+        +string region
+        +string commune
+    }
+    class Bien {
+        +uuid id
+        +string codeInventaire
+        +string designation
+        +uuid categorieId
+        +uuid structureId
+        +uuid siteId
+        +date dateAcquisition
+        +decimal valeurAcquisition
+        +string etat
+        +string statut
+    }
+    class categorie {
+        +uuid id
+        +string code
+        +string libelle
+        +integer dureeVieMois
+        +string methodeAmortissement
+    }
+    class Mouvement {
+        +uuid id
+        +string type
+        +string statut
+        +uuid bienId
+        +uuid structureSourceId
+        +uuid structureDestId
+        +uuid demandeurId
+        +uuid valideurId
+        +date dateEffet
+    }
+    class CampagneInventaire {
+        +uuid id
+        +string code
+        +uuid structureId
+        +date dateDebut
+        +date dateFin
+        +string statut
+    }
+    class Constat {
+        +uuid id
+        +uuid campagneId
+        +uuid bienId
+        +boolean present
+        +string etatConstate
+        +uuid agentId
+        +datetime dateConstate
+    }
+    class PlanMaintenance {
+        +uuid id
+        +uuid bienId
+        +string type
+        +integer periodiciteMois
+        +date prochaineEcheance
+    }
+    class Intervention {
+        +uuid id
+        +uuid bienId
+        +string type
+        +string statut
+        +date datePrevue
+        +date dateRealisee
+        +decimal cout
+        +uuid prestataireId
+    }
+    class Valorisation {
+        +uuid id
+        +uuid bienId
+        +integer exercice
+        +decimal dotation
+        +decimal cumul
+        +decimal vnc
+    }
+    class Document {
+        +uuid id
+        +string entiteType
+        +uuid entiteId
+        +string nomFichier
+        +string chemin
+        +string mime
+        +bigint taille
+        +integer version
+    }
+    class Notification {
+        +uuid id
+        +uuid utilisateurId
+        +string type
+        +string message
+        +boolean lue
+    }
+    class AuditLog {
+        +uuid id
+        +uuid utilisateurId
+        +string action
+        +string entite
+        +json avant
+        +json apres
+        +datetime date
+        +string ip
+    }
+
+    Utilisateur "n" --> "m" Role : a
+    Role "n" --> "m" Permission : possede
+    Utilisateur --> Structure : appartient a
+    Structure "1" --> "n" Structure : parent
+    Structure "1" --> "n" Site : possede
+    Bien --> categorie : de type
+    Bien --> Structure : affecte a (RG-02)
+    Bien --> Site : localise a
+    Mouvement --> Bien : concerne
+    Mouvement --> Structure : source / destination
+    CampagneInventaire --> Structure : perimetre
+    Constat --> CampagneInventaire : appartient a
+    Constat --> Bien : constate
+    PlanMaintenance --> Bien : concerne
+    Intervention --> Bien : sur
+    Valorisation --> Bien : valorise
+    Document --> Bien : piece jointe
+    Notification --> Utilisateur : destinee a
+    AuditLog --> Utilisateur : auteur

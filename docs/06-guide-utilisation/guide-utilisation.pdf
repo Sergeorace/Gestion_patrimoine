@@ -1,0 +1,388 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R ] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1998 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(  Guide d'utilisation - Plateforme de gestion du patrimoine de l'Etat) Tj
+T*
+( ) Tj
+T*
+( Plateforme numerique de recensement, suivi, affectation, maintenance, inventaire et cession des biens publics) Tj
+T*
+( de l'Etat togolais.) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+(  1. Installation et demarrage) Tj
+T*
+( ) Tj
+T*
+(  Prerequis) Tj
+T*
+( - Docker Desktop \(ou Docker Engine\) + Docker Compose v2) Tj
+T*
+( - 8 Go de RAM minimum recommandes) Tj
+T*
+( ) Tj
+T*
+(  Demarrage en une commande) Tj
+T*
+( bash) Tj
+T*
+( git clone <depot>) Tj
+T*
+( cd Patrimoine) Tj
+T*
+( docker compose up -d --build) Tj
+T*
+( ) Tj
+T*
+( Le premier demarrage telecharge les images et compile les services \(10-20 min\). Verifiez l'etat :) Tj
+T*
+( bash) Tj
+T*
+( docker compose ps          # tous les services doivent etre "healthy"/"running") Tj
+T*
+( curl http://localhost/api-gateway/api/v1/auth/health) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+(  Acces) Tj
+T*
+(   Service   URL  ) Tj
+T*
+(  --- --- ) Tj
+T*
+(   Application web   http://localhost  ) Tj
+T*
+(   API \(passerelle\)   http://localhost/api-gateway/api/v1/...  ) Tj
+T*
+(   RabbitMQ \(admin\)   http://localhost:15672 \(guest/guest\)  ) Tj
+T*
+( ) Tj
+T*
+(  Arret / redemarrage) Tj
+T*
+( bash) Tj
+T*
+( docker compose down        # arret) Tj
+T*
+( docker compose up -d       # redemarrage) Tj
+T*
+( docker compose restart <service>) Tj
+T*
+( docker compose logs -f asset-service) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+(  Sauvegarde et restauration) Tj
+T*
+( bash) Tj
+T*
+( docker compose exec postgres sh /scripts/backup.sh      # dump dans /backups) Tj
+T*
+( docker compose exec postgres sh /scripts/restore.sh /backups/backup-XXX.sql.gz) Tj
+T*
+( ) Tj
+T*
+( Le volume backups conserve les dumps. Prevoyez une copie externe reguliere.) Tj
+T*
+( ) Tj
+T*
+(  Mises a jour) Tj
+T*
+( bash) Tj
+T*
+( git pull) Tj
+T*
+( docker compose up -d --build) Tj
+T*
+(  Les migrations s'executent automatiquement au demarrage de chaque service.) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3828 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(  2. Comptes de demonstration) Tj
+T*
+( ) Tj
+T*
+(   Role   Email   Mot de passe   Droits  ) Tj
+T*
+(  --- --- --- --- ) Tj
+T*
+(   Administrateur   admin@etat.tg   Admin@2026   Tout \(*\)  ) Tj
+T*
+(   Gestionnaire patrimoine   gestionnaire@etat.tg   Gestion@2026   Biens, mouvements, valorisation  ) Tj
+T*
+(   Agent d'inventaire   agent@etat.tg   Agent@2026   Inventaires, saisie  ) Tj
+T*
+(   Auditeur   auditeur@etat.tg   Audit@2026   Lecture seule + rapports  ) Tj
+T*
+( ) Tj
+T*
+( > Changez ces mots de passe avant toute mise en production.) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+(  3. Procedures par profil) Tj
+T*
+( ) Tj
+T*
+(  3.1 Administrateur) Tj
+T*
+( 1. Creer un utilisateur : menu *Administration -> Utilisateurs* -> renseigner nom, email, mot de passe tempor) Tj
+T*
+(aire.) Tj
+T*
+( 2. Attribuer un role : selectionner le role \(RBAC\). Les permissions dependent du role : bien.creer, mouvement) Tj
+T*
+(.valider, inventaire.gerer, maintenance.gerer, valorisation.gerer, document.gerer, report.gerer.) Tj
+T*
+( 3. Auditer : consulter le journal d'audit \(qui a fait quoi, quand\).) Tj
+T*
+( ) Tj
+T*
+(  3.2 Gestionnaire de patrimoine) Tj
+T*
+( 1. Enregistrer un bien : *Biens -> Nouveau bien* -> designation, categorie, marque, modele, n° serie, valeur) Tj
+T*
+( d'acquisition, date, etat -> *Enregistrer*. Un code d'inventaire et une etiquette QR sont generes.) Tj
+T*
+( 2. Imprimer l'etiquette : fiche du bien -> QR code \(a coller sur l'actif\).) Tj
+T*
+( 3. Demander une affectation : *Affectations -> Nouvelle demande* -> type \(affectation/transfert/entree/sortie) Tj
+T*
+(\), bien, structure de destination, motif -> *Soumettre*. La demande passe en attente de validation.) Tj
+T*
+( 4. Valider un mouvement : une fois la demande en attente, le valideur \(permission mouvement.valider\) approuve) Tj
+T*
+( ou rejette avec commentaire.) Tj
+T*
+( 5. Planifier une maintenance : *Maintenance -> Plans* -> bien, type, periodicite \(mois\), prochaine echeance.) Tj
+T*
+( 6. Suivre les interventions : declarer une panne \(gravite\), planifier l'intervention \(agent/prestataire\), dem) Tj
+T*
+(arrer, cloturer avec compte-rendu et couts.) Tj
+T*
+( 7. Gerer les documents : joindre facture, titre, PV, photos a un bien \(types : facture, titre, pv, photo, con) Tj
+T*
+(trat\).) Tj
+T*
+( 8. Calculer la valorisation : *Rapports/Valorisation -> Calculer* pour un exercice -> amortissements lineaire) Tj
+T*
+(s ou degressifs selon la categorie.) Tj
+T*
+( ) Tj
+T*
+(  3.3 Agent d'inventaire \(terrain, mobile\)) Tj
+T*
+( 1. Creer une campagne : *Inventaires -> Nouvelle campagne* -> libelle, structure/site/categorie, periode, equ) Tj
+T*
+(ipes et agents.) Tj
+T*
+( 2. Demarrer la campagne \(statut en_cours\).) Tj
+T*
+( 3. Scanner / saisir : pour chaque bien, scanner le QR ou saisir le code -> indiquer *present/absent*, etat co) Tj
+T*
+(nstate \(bon, degrade, hors service\), commentaire, GPS \(optionnel\). Les constats peuvent etre saisis hors-ligne) Tj
+T*
+( puis synchronises en lot \(POST /inventories/{id}/constats avec tableau\).) Tj
+T*
+( 4. Cloturer : le systeme compare les biens attendus \(asset-service\) aux constats -> genere ecarts \(manquants,) Tj
+T*
+( excedentaires, degrades\) et le rapport de reconciliation \(taux de couverture\).) Tj
+T*
+( ) Tj
+T*
+(  3.4 Auditeur / decideur) Tj
+T*
+( - Consulter le tableau de bord : nombre de biens, valeur totale, VNC, amortissements, maintenances a venir.) Tj
+T*
+( - Generer un rapport : *Rapports -> Generer* -> type \(inventaire global, par structure, valorisation, mouveme) Tj
+T*
+(nts, maintenance\), format \(PDF, Excel, CSV\). Les exports volumineux passent par la file RabbitMQ.) Tj
+T*
+( - Verifier la tracabilite : chaque bien conserve l'historique complet \(mouvements, maintenances, valorisation) Tj
+T*
+(s, documents\).) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2625 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+( ) Tj
+T*
+(  4. Cycle de vie d'un bien \(rappel\)) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+( Entree -> Disponible -> Affecte -> \(En maintenance\) -> Sorti) Tj
+T*
+(            ↑            ↓) Tj
+T*
+(         Inventorie   Transfere / Reaffecte) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+( - Sorties : reforme, cession, rebut, perte, vol, destruction - chaque motif exige une validation et un justif) Tj
+T*
+(icatif.) Tj
+T*
+( - RG-04 : un bien sorti ne peut plus etre mouvemente.) Tj
+T*
+( - RG-06 : un agent ne voit/mouvoit que les biens de son perimetre, sauf roles centraux.) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+(  5. FAQ et depannage) Tj
+T*
+( ) Tj
+T*
+(   Probleme   Solution  ) Tj
+T*
+(  --- --- ) Tj
+T*
+(   docker compose up echoue sur un port   Un autre service occupe le port 80/5432/15672 - changez ${HTTP_PORT}) Tj
+T*
+( dans .env ou arretez le service conflictuel.  ) Tj
+T*
+(   Service en unhealthy   docker compose logs <service> ; souvent PostgreSQL pas encore pret - depends_on avec) Tj
+T*
+( healthcheck gere l'attente.  ) Tj
+T*
+(   Erreur 401 / session expiree   Reconnectez-vous ; le JWT expire \(duree configurable cote auth-service\).  ) Tj
+T*
+(   Erreur 403   Permission manquante pour votre role - contactez l'administrateur.  ) Tj
+T*
+(   Bien introuvable   Verifiez le perimetre \(structure\) ou les droits de lecture.  ) Tj
+T*
+(   Scan QR ne fonctionne pas   Le code est genere a la creation du bien ; regenerez l'etiquette depuis la fich) Tj
+T*
+(e. En hors-ligne, synchronisez la file locale.  ) Tj
+T*
+(   Rapport PDF/Excel lent   Generation asynchrone via RabbitMQ ; verifiez rabbitmq et le worker.  ) Tj
+T*
+(   Base de donnees corrompue   docker compose down, restaurer le dernier dump : restore.sh.  ) Tj
+T*
+( ) Tj
+T*
+(  Reinitialiser les donnees de demo) Tj
+T*
+( bash) Tj
+T*
+( docker compose down -v          # ATTENTION : supprime les volumes \(donnees\)) Tj
+T*
+( docker compose up -d --build    # recree et re-seed) Tj
+T*
+( ) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+(  6. Exploitation) Tj
+T*
+( ) Tj
+T*
+( - Logs : docker compose logs -f <service> ; journal d'audit dans auth_db.) Tj
+T*
+( - Sauvegardes : planifier backup.sh \(cron\) + copie hors site.) Tj
+T*
+( - Surveillance : endpoints /api/v1/<service>/health et /up ; RabbitMQ management pour les files.) Tj
+T*
+( - Production : generer de nouvelles cles JWT \(openssl genrsa\), definir des mots de passe forts, activer HTTPS) Tj
+T*
+( \(certificats dans docker/nginx/certs/\), restreindre RabbitMQ.) Tj
+T*
+( ) Tj
+T*
+( ---) Tj
+T*
+( ) Tj
+T*
+( *Document genere pour la plateforme " Gestion du patrimoine de l'Etat togolais " - Etape 7.*) Tj
+T*
+
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000128 00000 n 
+0000000225 00000 n 
+0000000351 00000 n 
+0000002400 00000 n 
+0000002526 00000 n 
+0000006405 00000 n 
+0000006531 00000 n 
+0000000000 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+9207
+%%EOF

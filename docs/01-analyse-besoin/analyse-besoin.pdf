@@ -1,0 +1,796 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R ] /Count 7 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2849 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+(ANALYSE DU BESOIN — PLATEFORME DE GESTION DU PATRIMOINE DE L'ÉTAT TOGOLAIS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Projet  Solution numérique de gestion du patrimoine de l'État togolais) Tj
+T*
+(Document  Analyse du besoin \(Étape 1\)) Tj
+T*
+(Version  1.0) Tj
+T*
+(Date  12 novembre 2026) Tj
+T*
+(Statut  Soumis à validation du maître d'ouvrage) Tj
+T*
+(Sources  Cahier des charges v1.0 \(CHAOLD Komi Serge, 12/11/2026\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. CONTEXTE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(La gestion du patrimoine de l'État togolais — terrains, bâtiments, véhicules, mobilier, matériel ) Tj
+T*
+(informatique et équipements — repose aujourd'hui sur des supports dispersés : registres papier, fichiers ) Tj
+T*
+(bureautiques et états isolés tenus par chaque administration. Cette fragmentation génère :) Tj
+T*
+() Tj
+T*
+(- l'absence de vue consolidée et fiable du patrimoine national ;) Tj
+T*
+(- des données redondantes, obsolètes ou contradictoires selon les structures ;) Tj
+T*
+(- une traçabilité insuffisante des affectations, transferts et sorties de biens ;) Tj
+T*
+(- des campagnes d'inventaire longues, coûteuses et difficilement comparables d'une année à l'autre ;) Tj
+T*
+(- une difficulté à évaluer la valeur du patrimoine et à planifier maintenance et renouvellement ;) Tj
+T*
+(- une production laborieuse des rapports destinés aux décideurs et aux organes de contrôle.) Tj
+T*
+() Tj
+T*
+(Le projet consiste à concevoir et développer une plateforme numérique centralisée, sécurisée et ) Tj
+T*
+(évolutive permettant de recenser, suivre, valoriser et contrôler l'ensemble des biens de l'État, de leur ) Tj
+T*
+(acquisition jusqu'à leur sortie du patrimoine.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2. OBJECTIFS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2.1 Objectif général  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Doter l'État togolais d'une plateforme numérique unique de gestion du patrimoine, fiable, traçable et ) Tj
+T*
+(accessible aux structures concernées.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2.2 Objectifs spécifiques  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Centraliser le recensement de tous les biens meubles et immeubles dans un référentiel unique.) Tj
+T*
+(2. Tracer le cycle de vie complet de chaque bien : entrée, affectation, transfert, maintenance, sortie.) Tj
+T*
+(3. Faciliter les campagnes d'inventaire et de récolement, y compris par scan de codes-barres/QR codes, ) Tj
+T*
+(avec tolérance aux coupures de connexion.) Tj
+T*
+(4. Valoriser les biens : valeur d'acquisition, amortissements, valeur nette comptable \(VNC\).) Tj
+T*
+(5. Produire des tableaux de bord et états réglementaires et de gestion en temps réel.) Tj
+T*
+(6. Renforcer le contrôle interne, la transparence et la lutte contre les pertes ou détournements.) Tj
+T*
+(7. Garantir sécurité, disponibilité et évolutivité via une architecture micro-services conteneurisée.) Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3344 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+(3. PARTIES PRENANTES ET ACTEURS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(3.1 Parties prenantes  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Partie prenante  Rôle) Tj
+T*
+(Maître d'ouvrage \(État togolais\)  Commanditaire ; valide les livrables, arbitre les choix fonctionnels) Tj
+T*
+(Direction en charge du patrimoine  Utilisateur principal, référent métier, pilotage de la solution) Tj
+T*
+(Ministères et structures publiques  Utilisateurs pour la gestion et l'inventaire de leurs biens) Tj
+T*
+(Organes de contrôle et d'audit  Consultation, vérification et audit des données et de la traçabilité) Tj
+T*
+(CHAOLD Komi Serge \(concepteur\)  Chef de projet : analyse, conception UML, documentation, guide ) Tj
+T*
+(d'utilisation) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(3.2 Acteurs de la solution  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Acteur  Description et responsabilités) Tj
+T*
+(Administrateur système  Utilisateurs, rôles, paramètres généraux, référentiels transverses) Tj
+T*
+(Gestionnaire central du patrimoine  Supervision de l'ensemble du patrimoine, validation des mouvements, ) Tj
+T*
+(consultation de tous les états) Tj
+T*
+(Responsable de structure  Gestion des biens de son ministère/direction/service, initiation des demandes ) Tj
+T*
+(d'affectation et de sortie) Tj
+T*
+(Agent inventorialiste  Inventaires et récolements sur le terrain \(scan, saisie, constat d'état\)) Tj
+T*
+(Comptable matières  Valorisation, amortissements, écritures de mouvement) Tj
+T*
+(Agent de maintenance  Planification et enregistrement des interventions) Tj
+T*
+(Auditeur / Contrôleur  Accès en lecture seule aux données, journaux d'audit et rapports) Tj
+T*
+(Décideur  Consultation des tableaux de bord synthétiques et indicateurs clés) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4. BESOINS FONCTIONNELS \(PRIORISATION MOSCOW\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(La priorisation du cahier des charges \(Essentielle / Haute / Moyenne\) est traduite ci-dessous en MoSCoW.) Tj
+T*
+() Tj
+T*
+(Réf.  Besoin  Priorité CDC  MoSCoW) Tj
+T*
+(BF-01  Authentification sécurisée, comptes, rôles et permissions  Essentielle  Must) Tj
+T*
+(BF-02  Organigramme des structures \(ministères, directions, services\) et sites/localisations  ) Tj
+T*
+(Essentielle  Must) Tj
+T*
+(BF-03  Enregistrement, modification, consultation et classement des biens par catégorie/nomenclature  ) Tj
+T*
+(Essentielle  Must) Tj
+T*
+(BF-04  Entrées de biens \(acquisition, don, transfert, construction\) avec pièces justificatives  ) Tj
+T*
+(Essentielle  Must) Tj
+T*
+(BF-05  Affectations, mises à disposition et transferts entre structures avec workflow de validation  ) Tj
+T*
+(Essentielle  Must) Tj
+T*
+(BF-06  Sorties de biens \(réforme, cession, rebut, perte, vol, destruction\)  Essentielle  Must) Tj
+T*
+(BF-07  Campagnes d'inventaire et récolement avec scan codes-barres/QR codes  Essentielle  Must) Tj
+T*
+(BF-08  Suivi de la valorisation et de l'amortissement des biens  Haute  Must) Tj
+T*
+(BF-09  Planification et suivi de la maintenance préventive et corrective  Haute  Must) Tj
+T*
+(BF-10  Gestion documentaire \(titres, factures, PV, photos\)  Haute  Must) Tj
+T*
+(BF-11  Notifications \(validations, échéances, alertes\) et journal d'audit  Haute  Must) Tj
+T*
+(BF-12  Tableaux de bord, états et exports \(PDF, Excel/CSV\)  Haute  Must) Tj
+T*
+(BF-13  Import de données depuis fichiers structurés \(Excel/CSV\)  Moyenne  Should) Tj
+T*
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3795 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(BF-14  Recherche et filtrage multicritères des biens  Haute  Must) Tj
+T*
+() Tj
+T*
+(Lecture MoSCoW :) Tj
+T*
+() Tj
+T*
+(- Must : indispensable à la recette \(12 besoins, BF-01 à BF-12 + BF-14\).) Tj
+T*
+(- Should : important mais négociable en cas de tension sur le délai \(BF-13, import\).) Tj
+T*
+(- Could / Won't \(cette phase\) : application mobile native, interconnexion avec les systèmes de finances ) Tj
+T*
+(publiques, cartographie SIG, lecture RFID — voir §7.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4.1 Détail des modules fonctionnels  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Module  Contenu) Tj
+T*
+(Authentification et accès  Connexion identifiant/mot de passe, politique de mots de passe, 2FA pour ) Tj
+T*
+(rôles sensibles, RBAC, réinitialisation, verrouillage après échecs, expiration de sessions, jetons ) Tj
+T*
+(JWT/OAuth2 pour les services) Tj
+T*
+(Référentiel organisationnel  Hiérarchie des structures \(ministère -> direction -> service -> unité\), ) Tj
+T*
+(sites et localisations \(région, préfecture, commune, adresse, bâtiment, bureau\), nomenclatures ) Tj
+T*
+(\(catégories, états, modes d'acquisition, motifs de sortie\), paramètres d'amortissement par catégorie) Tj
+T*
+(Gestion des biens  Fiche bien complète, spécificités par type \(immobilier : superficie, référence ) Tj
+T*
+(cadastrale, coordonnées ; véhicule : immatriculation, châssis, kilométrage ; informatique : n° de série, ) Tj
+T*
+(configuration\), génération de QR codes/étiquettes, recherche multicritère, import Excel/CSV avec rapport ) Tj
+T*
+(d'anomalies) Tj
+T*
+(Mouvements et affectations  Entrées, workflow d'affectation/mise à disposition/transfert \(demande -> ) Tj
+T*
+(validation -> exécution\), workflow de sortie \(réforme, cession, rebut, perte, vol, destruction\) avec ) Tj
+T*
+(justificatifs et PV, historique complet par bien) Tj
+T*
+(Inventaire et récolement  Campagnes par structure/site/catégorie avec équipes et calendrier, saisie ) Tj
+T*
+(terrain responsive/PWA \(scan, constat, photos, commentaires\), fonctionnement hors-ligne avec ) Tj
+T*
+(synchronisation, détection automatique des écarts, rapport de récolement, clôture et archivage) Tj
+T*
+(Maintenance  Plans préventifs \(périodicité, alertes\), déclaration de pannes, ordres d'intervention, ) Tj
+T*
+(suivi des coûts et prestataires, indicateurs de fiabilité) Tj
+T*
+(Valorisation et amortissement  Calcul automatique \(linéaire, dégressif selon paramétrage\), suivi valeur ) Tj
+T*
+(d'acquisition / amortissements cumulés / VNC, états par structure/catégorie/période, réévaluations) Tj
+T*
+(Gestion documentaire  Stockage sécurisé des pièces, association aux ) Tj
+T*
+(biens/mouvements/inventaires/interventions, contrôle formats et tailles, versionnage, horodatage) Tj
+T*
+(Notifications et audit  Notifications internes et e-mail, journal d'audit filtrable \(qui, quoi, quand, ) Tj
+T*
+(avant/après\)) Tj
+T*
+(Reporting  Tableau de bord national, états standards \(registre, mouvements, inventaire, amortissements, ) Tj
+T*
+(maintenance\), exports PDF/Excel/CSV, filtres dynamiques, graphiques interactifs) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4.2 Matrice des droits \(synthèse du CDC\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Fonction  Admin  Gest. central  Resp. struct.  Inventoriste  Auditeur  Décideur) Tj
+T*
+(Gestion des utilisateurs  CRUD  –  –  –  –  –) Tj
+T*
+(Référentiels  CRUD  CRUD  Lecture  Lecture  Lecture  Lecture) Tj
+T*
+(Fiches biens  Lecture  CRUD  CRUD \(périm.\)  Lecture  Lecture  Lecture) Tj
+T*
+(Validation des mouvements  –  Oui  Niveau 1  –  –  –) Tj
+T*
+(Campagnes d'inventaire  –  Créer/clôturer  Créer \(périm.\)  Saisie  Lecture  Lecture) Tj
+T*
+(Valorisation  –  Oui  Lecture  –  Lecture  Lecture) Tj
+T*
+(Journal d'audit  Lecture  Lecture  –  –  Lecture  –) Tj
+T*
+(Tableaux de bord  Oui  Oui  Périm.  –  Oui  Oui) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3239 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(5. BESOINS NON FONCTIONNELS) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Catégorie  Exigence) Tj
+T*
+(Performance  Temps de réponse < 2 s pour 95 % des requêtes courantes ; pagination et indexation des ) Tj
+T*
+(listes volumineuses) Tj
+T*
+(Disponibilité  Objectif 99 % ; redémarrage automatique des conteneurs ; supervision des services) Tj
+T*
+(Scalabilité  Montée en charge horizontale par service ; ajout de modules sans refonte) Tj
+T*
+(Sécurité  Authentification forte, HTTPS/TLS, protection OWASP Top 10, journal d'audit complet) Tj
+T*
+(Fiabilité des données  Sauvegardes quotidiennes PostgreSQL, tests de restauration, intégrité ) Tj
+T*
+(référentielle) Tj
+T*
+(Utilisabilité  Interface claire et cohérente, parcours courts, aide contextuelle, messages d'erreur ) Tj
+T*
+(explicites en français) Tj
+T*
+(Compatibilité  Navigateurs récents \(Chrome, Firefox, Edge, Safari\) ; responsive ordinateur, tablette, ) Tj
+T*
+(mobile) Tj
+T*
+(Maintenabilité  Code structuré \(PSR-12\), tests automatisés, API versionnées, intégration continue) Tj
+T*
+(Portabilité  Déploiement identique sur tout hôte compatible Docker) Tj
+T*
+(Traçabilité  Toute modification de donnée sensible horodatée et rattachée à son auteur) Tj
+T*
+(Interopérabilité  API REST documentées \(OpenAPI/Swagger\) pour de futures intégrations) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(6. RèGLES DE GESTION) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Réf.  Règle) Tj
+T*
+(RG-01  Chaque bien possède un identifiant unique et un code d'inventaire non réutilisable, y compris ) Tj
+T*
+(après sortie) Tj
+T*
+(RG-02  Un bien n'est affecté qu'à une seule structure responsable à un instant donné) Tj
+T*
+(RG-03  Tout mouvement \(affectation, transfert, sortie\) fait l'objet d'une demande, d'une validation par ) Tj
+T*
+(un rôle habilité et d'un historique horodaté) Tj
+T*
+(RG-04  Un bien sorti du patrimoine n'est plus modifiable mais reste consultable pour l'historique et ) Tj
+T*
+(l'audit) Tj
+T*
+(RG-05  La valeur nette comptable est calculée automatiquement selon la méthode d'amortissement ) Tj
+T*
+(paramétrée par catégorie) Tj
+T*
+(RG-06  Une structure ne peut consulter et gérer que les biens de son périmètre, sauf rôle central ou ) Tj
+T*
+(d'audit) Tj
+T*
+(RG-07  Toute action sensible est enregistrée dans le journal d'audit \(utilisateur, date, action, valeurs ) Tj
+T*
+(avant/après\)) Tj
+T*
+(RG-08  Une campagne d'inventaire clôturée génère un rapport d'écarts \(biens manquants, excédentaires, ) Tj
+T*
+(dégradés\)) Tj
+T*
+() Tj
+T*
+(États du cycle de vie d'un bien \(extrait du CDC §6.4\) :) Tj
+T*
+() Tj
+T*
+(Enregistré -> Disponible -> Affecté -> En maintenance -> Affecté \(cycle\) -> Proposé à la sortie -> Sorti ) Tj
+T*
+(\(état final, non modifiable\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(7. CONTRAINTES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Type  Contrainte) Tj
+T*
+(Technique  Laravel \(PHP 8.3+\), PostgreSQL 16, Docker + Docker Compose, architecture micro-services) Tj
+T*
+(Conception  Modélisation UML obligatoire ; maquettes Figma \(ou cahier de design si accès impossible\)) Tj
+T*
+(Données  PostgreSQL conteneurisé dans docker-compose.yml \(volumes persistants, healthcheck, variables ) Tj
+T*
+(via .env\)) Tj
+T*
+(Interface  Langue française ; responsive ; tolérance aux connectivités limitées \(PWA hors-ligne pour ) Tj
+T*
+
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3117 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(l'inventaire\)) Tj
+T*
+(Documentation  Documentation complète et guide d'utilisation détaillé par profil) Tj
+T*
+(Déploiement  Un seul point d'entrée \(API Gateway + reverse proxy Nginx\) ; démarrage par docker compose ) Tj
+T*
+(up -d --build) Tj
+T*
+(Planning  Réalisation en 6 semaines, méthode agile \(sprints d'une semaine\), équipe de 9 intervenants) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(8. ARCHITECTURE CIBLE \(VUE ISSUE DU CDC §5\)) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Architecture micro-services : chaque service possède sa responsabilité, son Dockerfile et sa base ) Tj
+T*
+(PostgreSQL logique \(« database per service »\). Communication synchrone REST/JSON et asynchrone par bus ) Tj
+T*
+(de messages \(RabbitMQ\). Point d'entrée unique : API Gateway \(Nginx\) pour routage, authentification ) Tj
+T*
+(centralisée et rate limiting.) Tj
+T*
+() Tj
+T*
+(Service  Responsabilité  Base) Tj
+T*
+(api-gateway  Routage, auth, rate limiting, agrégation, CORS \(Nginx\)  –) Tj
+T*
+(auth-service  Utilisateurs, rôles, permissions, JWT/OAuth2, 2FA  auth_db) Tj
+T*
+(organisation-service  Structures, sites, localisations, nomenclatures, paramètres  organisation_db) Tj
+T*
+(asset-service  Fiches biens, catégories, codes-barres/QR, import  asset_db) Tj
+T*
+(movement-service  Entrées, affectations, transferts, sorties, workflows  movement_db) Tj
+T*
+(inventory-service  Campagnes, constats, écarts, récolement  inventory_db) Tj
+T*
+(maintenance-service  Plans et ordres de maintenance, coûts, prestataires  maintenance_db) Tj
+T*
+(valuation-service  Valorisation, amortissements, réévaluations  valuation_db) Tj
+T*
+(document-service  Stockage et versionnage des pièces jointes  document_db + fichiers) Tj
+T*
+(notification-service  Notifications e-mail/internes, journal d'audit  notification_db) Tj
+T*
+(reporting-service  Tableaux de bord, états, exports PDF/Excel  reporting_db \(lecture agrégée\)) Tj
+T*
+(web-app  Interface utilisateur  –) Tj
+T*
+() Tj
+T*
+(Infrastructure : PostgreSQL 16 \(un conteneur, une base par service\), RabbitMQ, Redis \(cache/files\), ) Tj
+T*
+(Nginx \(reverse proxy/TLS\), stockage objet ou volume Docker pour documents/photos.) Tj
+T*
+() Tj
+T*
+(Stack : PHP 8.3+ / Laravel \(dernière stable\), Inertia.js + Vue 3 + Tailwind CSS + Chart.js \(PWA pour ) Tj
+T*
+(l'inventaire\), PHPUnit/Pest, PHPStan, Pint, OpenAPI/Swagger \(Scramble ou L5-Swagger\), Git + CI.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(9. PéRIMèTRE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(9.1 Inclus  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- Analyse du besoin et formalisation des exigences \(ce document\)) Tj
+T*
+(- Conception UML complète \(cas d'utilisation, classes, séquences, activités, composants, déploiement, ) Tj
+T*
+(états-transitions\)) Tj
+T*
+(- Maquettage/design Figma \(ou cahier de design si accès impossible\)) Tj
+T*
+(- Développement de la solution en micro-services Laravel) Tj
+T*
+(- PostgreSQL conteneurisé via Docker Compose) Tj
+T*
+(- Fiche technique, proposition financière, guide d'utilisation) Tj
+T*
+(- Tests, recette, déploiement, formation des utilisateurs clés) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(9.2 Exclus \(sauf avenant\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 3377 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+(- Acquisition du matériel d'hébergement \(serveurs, réseau\) et lecteurs de codes-barres) Tj
+T*
+(- Reprise massive de données non numérisées \(saisie de registres papier\) — l'import de fichiers ) Tj
+T*
+(structurés Excel/CSV est inclus \(BF-13, Should\)) Tj
+T*
+(- Application mobile native \(interface web responsive/PWA prévue\)) Tj
+T*
+(- Interconnexion avec des systèmes tiers non identifiés \(finances publiques, etc.\) — phase ultérieure) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(10. RISQUES ET HYPOTHèSES) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(10.1 Risques majeurs \(extrait du CDC §17\)  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Risque  Niveau  Mesure de maîtrise) Tj
+T*
+(Dérive fonctionnelle \(périmètre évolutif\)  Élevé  Backlog priorisé MoSCoW, jalons de validation, gestion ) Tj
+T*
+(formelle des avenants) Tj
+T*
+(Qualité/exhaustivité des données initiales  Élevé  Modèles d'import, contrôles automatiques, rapports ) Tj
+T*
+(d'anomalies) Tj
+T*
+(Faille de sécurité  Élevé  Bonnes pratiques OWASP, revues, tests de sécurité, mises à jour) Tj
+T*
+(Perte de données  Élevé  Sauvegardes automatiques, volumes persistants, tests de restauration) Tj
+T*
+(Délai contraint \(6 semaines\)  Élevé  Équipe de 9 en parallèle, périmètre gelé S1, validations < 48 h, ) Tj
+T*
+(point quotidien) Tj
+T*
+(Complexité micro-services  Moyen  Socle commun, conventions strictes, contrats d'API, supervision) Tj
+T*
+(Connectivité limitée sur le terrain  Moyen  PWA tolérante aux coupures, synchronisation différée) Tj
+T*
+(Résistance au changement  Moyen  Formation, utilisateurs pilotes, communication) Tj
+T*
+(Retards de livraison  Moyen  Sprints hebdomadaires, suivi quotidien, marge ~15 %) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(10.2 Hypothèses de travail  ) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Stack frontend : le CDC impose Inertia.js + Vue 3 + Tailwind CSS \(§5.5, §14\). La consigne initiale ) Tj
+T*
+(autorisait Blade/Livewire ou SPA Vue/React : nous retenons la stack du cahier des charges \(Inertia + Vue ) Tj
+T*
+(3\), qui offre une SPA moderne sans API backend dédiée pour le web.) Tj
+T*
+(2. Découpage des services : la liste des services du CDC \(§5.2, 12 services\) affine la liste initiale à ) Tj
+T*
+(9 services ; elle est retenue comme référence.) Tj
+T*
+(3. JWT/OAuth2 : le CDC mentionne les deux ; nous prévoyons des jetons JWT \(via Laravel Passport ou un ) Tj
+T*
+(service JWT léger\) avec refresh tokens.) Tj
+T*
+(4. Données de démonstration : un jeu réaliste togolais \(structures, catégories, biens types\) sera ) Tj
+T*
+(produit en seeders.) Tj
+T*
+(5. Hébergement : le livrable démarre en local via docker compose up -d --build ; l'hébergement de ) Tj
+T*
+(production est hors périmètre.) Tj
+T*
+(6. Figma : en l'absence d'accès à Figma, un cahier de design détaillé \(charte, wireframes ASCII, ) Tj
+T*
+(parcours, composants\) sera produit à l'étape 3, importable ensuite dans Figma.) Tj
+T*
+(7. PDF : les documents PDF seront générés via une chaîne outillée \(print CSS ou DomPDF côté ) Tj
+T*
+(reporting-service pour les exports métier\).) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(11. CRITèRES D'ACCEPTATION DE L'ANALYSE) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- [ ] Acteurs, besoins et règles de gestion compris et validés par le maître d'ouvrage) Tj
+T*
+(- [ ] Priorisation MoSCoW arrêtée \(base du backlog des sprints\)) Tj
+T*
+(- [ ] Périmètre inclus/exclus confirmé) Tj
+T*
+(- [ ] Hypothèses documentées et non contestées) Tj
+T*
+
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 200 >>
+stream
+BT /F1 9 Tf 12.5 TL 50 790 Td
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(*Document rédigé dans le cadre de l'étape 1 « Analyse du besoin » du projet de gestion du patrimoine de ) Tj
+T*
+(l'État togolais.*) Tj
+T*
+
+ET
+endstream
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000156 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000003279 00000 n 
+0000003405 00000 n 
+0000006800 00000 n 
+0000006926 00000 n 
+0000010772 00000 n 
+0000010900 00000 n 
+0000014191 00000 n 
+0000014319 00000 n 
+0000017488 00000 n 
+0000017616 00000 n 
+0000021045 00000 n 
+0000021173 00000 n 
+0000000000 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+21424
+%%EOF

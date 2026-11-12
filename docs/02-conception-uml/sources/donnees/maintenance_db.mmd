@@ -1,0 +1,61 @@
+%% MLD - maintenance_db (PostgreSQL)
+erDiagram
+    PLANS_MAINTENANCE {
+        uuid id PK
+        uuid bien_id
+        string type
+        text description
+        integer periodicite_mois
+        date prochaine_echeance
+        boolean actif
+        timestamp created_at
+        timestamp updated_at
+    }
+    INTERVENTIONS {
+        uuid id PK
+        uuid bien_id
+        string type
+        string statut
+        text description
+        date date_prevue
+        date date_realisee
+        uuid agent_id
+        uuid prestataire_id FK
+        numeric cout_main_oeuvre
+        numeric cout_pieces
+        text compte_rendu
+        timestamp created_at
+        timestamp updated_at
+    }
+    PANNES {
+        uuid id PK
+        uuid bien_id
+        uuid declare_par
+        text description
+        string gravite
+        timestamp declare_le
+        uuid intervention_id FK
+        timestamp created_at
+    }
+    PRESTATAIRES {
+        uuid id PK
+        string nom
+        string specialite
+        string contact
+        text adresse
+        boolean actif
+        timestamp created_at
+        timestamp updated_at
+    }
+    PIECES_INTERVENTION {
+        uuid id PK
+        uuid intervention_id FK
+        string designation
+        numeric cout
+        integer quantite
+        timestamp created_at
+    }
+    PLANS_MAINTENANCE ||--o{ INTERVENTIONS : planifie
+    PANNES ||--o| INTERVENTIONS : resolue_par
+    INTERVENTIONS ||--o| PRESTATAIRES : realisee_par
+    INTERVENTIONS ||--o{ PIECES_INTERVENTION : consomme

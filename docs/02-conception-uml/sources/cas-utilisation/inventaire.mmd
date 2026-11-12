@@ -1,0 +1,29 @@
+%% Cas d'utilisation - Module Inventaire et recolement (inventory-service)
+flowchart LR
+    subgraph Acteurs
+        GC[Gestionnaire central]
+        RS[Responsable de structure]
+        AI[Agent inventorialiste]
+        LECT["Lecteurs (auditeur, decideur)"]
+    end
+
+    subgraph InventoryService["inventory-service"]
+        CU07[CU-07 Campagne d'inventaire]
+        CU07a[Creer une campagne]
+        CU07b[Constituer les equipes et le calendrier]
+        CU07c[Scanner un code / constater un bien]
+        CU07d[Mode hors-ligne et synchronisation]
+        CU07e[Detecter les ecarts]
+        CU07f[Cloturer et generer le rapport de recolement]
+    end
+
+    GC --> CU07
+    RS --> CU07
+    AI --> CU07
+    LECT --> CU07
+    CU07 --> CU07a
+    CU07 --> CU07b
+    CU07 --> CU07c
+    CU07 --> CU07d
+    CU07 --> CU07e
+    CU07 --> CU07f

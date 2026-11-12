@@ -1,0 +1,68 @@
+%% Diagramme de classes - inventory-service (inventory_db)
+classDiagram
+    class Campagne {
+        +uuid id
+        +string code UK
+        +string libelle
+        +uuid structureId
+        +uuid siteId
+        +uuid categorieId
+        +date dateDebut
+        +date dateFin
+        +string statut
+        +uuid creePar
+        +datetime clotureLe
+        +timestamps
+    }
+    class Equipe {
+        +uuid id
+        +uuid campagneId FK
+        +string nom
+        +text role
+    }
+    class MembreEquipe {
+        +uuid id
+        +uuid equipeId FK
+        +uuid agentId
+        +string role
+    }
+    class Constat {
+        +uuid id
+        +uuid campagneId FK
+        +uuid bienId
+        +boolean present
+        +string etatConstate
+        +text commentaire
+        +uuid agentId
+        +datetime dateConstate
+        +decimal latitude
+        +decimal longitude
+        +boolean synchronise
+        +timestamps
+    }
+    class Ecart {
+        +uuid id
+        +uuid campagneId FK
+        +uuid bienId
+        +string type
+        +string statutTraitement
+        +text resolution
+        +timestamps
+    }
+    class RapportReconciliation {
+        +uuid id
+        +uuid campagneId FK UK
+        +integer totalAttendus
+        +integer totalPresents
+        +integer manquants
+        +integer excdentaires
+        +integer degrades
+        +decimal tauxCouverture
+        +datetime genereLe
+    }
+
+    Campagne "1" --> "n" Equipe : compose
+    Equipe "1" --> "n" MembreEquipe : contient
+    Campagne "1" --> "n" Constat : collecte
+    Campagne "1" --> "n" Ecart : detecte
+    Campagne "1" --> "1" RapportReconciliation : produit (RG-08)

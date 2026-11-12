@@ -1,0 +1,28 @@
+%% Cas d'utilisation - Module Gestion des biens (asset-service)
+flowchart LR
+    subgraph Acteurs
+        RS[Responsable de structure]
+        GC[Gestionnaire central]
+        LECT["Lecteurs (inventoriste, auditeur, decideur, comptable)"]
+    end
+
+    subgraph AssetService["asset-service"]
+        CU04[CU-04 Gerer les fiches biens]
+        CU04a[Creer une fiche bien]
+        CU04b[Generer code inventaire et QR code]
+        CU04c[Imprimer etiquette]
+        CU04d[Rechercher / filtrer les biens]
+        CU04e[Import Excel / CSV]
+        CU04f[Consulter historique et photos]
+    end
+
+    RS --> CU04
+    GC --> CU04
+    LECT --> CU04d
+    LECT --> CU04f
+    CU04 --> CU04a
+    CU04 --> CU04b
+    CU04 --> CU04c
+    CU04 --> CU04d
+    CU04 --> CU04e
+    CU04 --> CU04f

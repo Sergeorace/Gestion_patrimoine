@@ -1,0 +1,91 @@
+%% MLD - asset_db (PostgreSQL)
+erDiagram
+    BIENS {
+        uuid id PK
+        string code_inventaire UK
+        uuid uuid UK
+        string designation
+        text description
+        uuid categorie_id
+        string type_specifique
+        jsonb caracteristiques
+        date date_acquisition
+        string mode_acquisition
+        numeric valeur_acquisition
+        string devise
+        uuid structure_id
+        uuid site_id
+        uuid localisation_id
+        string etat
+        string statut
+        uuid cree_par
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+    CARACTERISTIQUES_BIENS {
+        uuid id PK
+        uuid bien_id FK
+        string cle
+        string valeur
+        timestamp created_at
+    }
+    PHOTOS_BIENS {
+        uuid id PK
+        uuid bien_id FK
+        string chemin
+        string legende
+        boolean principale
+        timestamp ajoute_le
+    }
+    SPECIFIQUES_IMMOBILIERS {
+        uuid bien_id PK,FK
+        numeric superficie
+        string reference_cadastrale
+        string titre_foncier
+        numeric latitude
+        numeric longitude
+    }
+    SPECIFIQUES_VEHICULES {
+        uuid bien_id PK,FK
+        string immatriculation UK
+        string chassis
+        string marque
+        string modele
+        integer annee
+        integer kilometrage
+    }
+    SPECIFIQUES_INFORMATIQUE {
+        uuid bien_id PK,FK
+        string numero_serie UK
+        string configuration
+        string os
+        string processeur
+        integer ram_go
+    }
+    IMPORTS {
+        uuid id PK
+        string nom_fichier
+        uuid lance_par
+        integer total_lignes
+        integer lignes_valides
+        integer lignes_en_erreur
+        string statut
+        timestamp termine_le
+        timestamp created_at
+    }
+    IMPORT_ANOMALIES {
+        uuid id PK
+        uuid import_id FK
+        integer ligne
+        string champ
+        string valeur
+        string message
+        timestamp created_at
+    }
+    BIENS ||--o{ CARACTERISTIQUES_BIENS : possede
+    BIENS ||--o{ PHOTOS_BIENS : illustre
+    BIENS ||--o| SPECIFIQUES_IMMOBILIERS : specialise
+    BIENS ||--o| SPECIFIQUES_VEHICULES : specialise
+    BIENS ||--o| SPECIFIQUES_INFORMATIQUE : specialise
+    IMPORTS ||--o{ IMPORT_ANOMALIES : signale

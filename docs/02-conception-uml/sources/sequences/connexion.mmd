@@ -1,0 +1,29 @@
+%% Diagramme de sequence - Connexion (CU-01)
+sequenceDiagram
+    autonumber
+    actor U as Utilisateur
+    participant W as web-app (Inertia/Vue)
+    participant G as api-gateway (Nginx)
+    participant A as auth-service
+    participant DB as auth_db (PostgreSQL)
+    participant R as Redis
+    participant N as notification-service
+
+    U->>W: Saisit identifiant + mot de passe
+    W->>G: POST /api/v1/auth/login
+    G->>A: Verifie rate limit + route
+    A->>DB: Recherche utilisateur par email
+    DB-->>A: Utilisateur (hash, statut, structure)
+    A->>A: Verifie mot de passe (bcrypt), statut, verrouillage
+    alt 2FA actif (role sensible)
+        A-->>U: Demande du code 2FA
+        U->>W: Saisit le code
+        W->>G: POST /api/v1/auth/2fa/verify
+        G->>A: Verification code
+    end
+    A->>A: Emission access token JWT + refresh token
+    A->>DB: Enregistre session / journal connexion
+    A-->>G: Tokens + profil + permissions
+    G-->>W: 200 OK + tokens
+    W-->>U: Redirection tableau de bord
+    A-)N: Evenement "utilisateur connecte" (audit)

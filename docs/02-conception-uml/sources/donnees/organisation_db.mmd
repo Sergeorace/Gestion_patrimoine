@@ -1,0 +1,72 @@
+%% MLD - organisation_db (PostgreSQL)
+erDiagram
+    STRUCTURES {
+        uuid id PK
+        string code UK
+        string libelle
+        string type
+        uuid parent_id FK
+        string statut
+        text adresse
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+    SITES {
+        uuid id PK
+        string code UK
+        uuid structure_id FK
+        string libelle
+        string region
+        string prefecture
+        string commune
+        text adresse
+        numeric latitude
+        numeric longitude
+        timestamp created_at
+        timestamp updated_at
+    }
+    LOCALISATIONS {
+        uuid id PK
+        uuid site_id FK
+        string batiment
+        string etage
+        string bureau
+        text precision
+        timestamp created_at
+    }
+    CATEGORIES {
+        uuid id PK
+        string code UK
+        string libelle
+        uuid parent_id FK
+        text description
+        integer duree_vie_mois
+        string methode_amortissement
+        boolean actif
+        timestamp created_at
+        timestamp updated_at
+    }
+    NOMENCLATURES {
+        uuid id PK
+        string type
+        string code UK
+        string libelle
+        integer ordre
+        boolean actif
+        timestamp created_at
+    }
+    PARAMETRES_AMORTISSEMENT {
+        uuid id PK
+        uuid categorie_id FK
+        string methode
+        numeric taux
+        integer duree_vie_mois
+        date date_effet
+        timestamp created_at
+    }
+    STRUCTURES ||--o{ STRUCTURES : parent_enfant
+    STRUCTURES ||--o{ SITES : possede
+    SITES ||--o{ LOCALISATIONS : contient
+    CATEGORIES ||--o{ CATEGORIES : sous_categories
+    CATEGORIES ||--o{ PARAMETRES_AMORTISSEMENT : parametre

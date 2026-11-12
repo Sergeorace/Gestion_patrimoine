@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='390' height='844' viewBox='0 0 390 844'>
+<rect width='390' height='844' fill='#F3F4F6'/>
+<rect x='0' y='0' width='390' height='56' rx='0' fill='#0B2545'/>
+<text x='16' y='35' font-size='20' fill='#FFFFFF' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'><</text>
+<text x='195.0' y='35' font-size='15' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0012</text>
+<rect x='16' y='72' width='358' height='560' rx='12' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<rect x='36' y='96' width='90' height='90' rx='8' fill='#F3F4F6' stroke='#D1D5DB' stroke-width='1'/>
+<text x='81' y='152' font-size='22' fill='#111827' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>QR</text>
+<text x='146' y='112' font-size='17' fill='#111827' font-weight='700'font-family='Inter,Segoe UI,Arial,sans-serif'>Toyota Land Cruiser</text>
+<text x='146' y='136' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>PAT-2026-0012 - Vehicule</text>
+<rect x='146' y='152' width='63' height='22' rx='11' fill='#DBEAFE'/>
+<text x='177.5' y='167' font-size='11' fill='#13315C' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Affecte</text>
+<text x='36' y='238' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Immatriculation</text>
+<text x='36' y='260' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>TG-1234-AB</text>
+<line x1='36' y1='272' x2='338' y2='272' stroke='#F3F4F6' stroke-width='1'/>
+<text x='36' y='300' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Chassis</text>
+<text x='36' y='322' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>JTMBFREV8P...</text>
+<line x1='36' y1='334' x2='338' y2='334' stroke='#F3F4F6' stroke-width='1'/>
+<text x='36' y='362' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Valeur (VNC)</text>
+<text x='36' y='384' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>36 800 000 FCFA</text>
+<line x1='36' y1='396' x2='338' y2='396' stroke='#F3F4F6' stroke-width='1'/>
+<text x='36' y='424' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Structure</text>
+<text x='36' y='446' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>MIN-DEF</text>
+<line x1='36' y1='458' x2='338' y2='458' stroke='#F3F4F6' stroke-width='1'/>
+<text x='36' y='486' font-size='12' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Site</text>
+<text x='36' y='508' font-size='15' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Lome Central</text>
+<rect x='36' y='620' width='150' height='42' rx='6' fill='#1D4E89'/>
+<text x='111.0' y='646.0' font-size='13' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Affecter</text>
+<rect x='200' y='620' width='154' height='42' rx='6' fill='#FFFFFF' stroke='#D1D5DB' stroke-width='1'/>
+<text x='277.0' y='646.0' font-size='13' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Panne</text>
+<rect x='0' y='760' width='390' height='84' rx='0' fill='#FFFFFF'/>
+<line x1='0' y1='760' x2='390' y2='760' stroke='#D1D5DB' stroke-width='1'/>
+<text x='48.75' y='800' font-size='18' fill='#6B7280' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>⌂</text>
+<text x='48.75' y='822' font-size='11' fill='#6B7280' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Accueil</text>
+<text x='146.25' y='800' font-size='18' fill='#1D4E89' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>▦</text>
+<text x='146.25' y='822' font-size='11' fill='#1D4E89' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Biens</text>
+<text x='243.75' y='800' font-size='18' fill='#6B7280' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>⌗</text>
+<text x='243.75' y='822' font-size='11' fill='#6B7280' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Scan</text>
+<text x='341.25' y='800' font-size='18' fill='#6B7280' font-weight='700' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>⋯</text>
+<text x='341.25' y='822' font-size='11' fill='#6B7280' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Plus</text>
+</svg>

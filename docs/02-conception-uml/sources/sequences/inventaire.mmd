@@ -1,0 +1,50 @@
+%% Diagramme de sequence - Campagne d'inventaire et scan QR (CU-07)
+sequenceDiagram
+    autonumber
+    actor GC as Gestionnaire central
+    actor AI as Agent inventorialiste
+    participant W as web-app (PWA)
+    participant G as api-gateway
+    participant I as inventory-service
+    participant S as asset-service
+    participant DB as inventory_db
+    participant Q as File hors-ligne (IndexedDB)
+    participant N as notification-service
+
+    GC->>W: Cree campagne (structure, site, periode, equipe)
+    W->>G: POST /api/v1/inventories/campaigns
+    G->>I: Creation campagne
+    I->>DB: INSERT campagne statut=Planifiee
+    I->>N: Notification aux agents inventorialistes
+    Note over AI,W: Terrain - connectivite variable
+    AI->>W: Ouvre campagne sur mobile (PWA)
+    W->>G: GET /api/v1/inventories/campaigns/{id}/assets
+    G->>I: Liste des biens attendus
+    I->>S: GET /api/v1/assets?structure_id=...&site_id=...
+    S-->>I: Biens du perimetre
+    I-->>G: Liste biens (codes QR)
+    G-->>W: Inventaire a realiser
+    W->>Q: Met en cache la liste (mode hors-ligne)
+    loop Pour chaque bien
+        AI->>W: Scan code QR / code-barres
+        W->>I: POST /api/v1/inventories/{id}/constats
+        alt Connecte
+            I->>DB: INSERT constat (present, etat, agent, date)
+            I-->>W: Constat enregistre
+        else Coupure reseau
+            W->>Q: Stocke constat localement
+            W-->>AI: "Sera synchronise"
+        end
+    end
+    Note over AI,W: Retour de connectivite
+    W->>I: POST /api/v1/inventories/{id}/sync (constats locaux)
+    I->>DB: INSERT constats + detection ecarts
+    I->>DB: Calcul ecarts (manquants, excédentaires, degradés)
+    AI->>W: Cloture la campagne
+    W->>G: POST /api/v1/inventories/{id}/close
+    G->>I: Cloture
+    I->>DB: UPDATE campagne statut=Cloturee
+    I->>N: Evenement "inventaire cloture"
+    N-->>GC: Rapport d'ecarts disponible
+    I-->>G: 200 OK + rapport
+    G-->>W: Rapport de recolement

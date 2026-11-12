@@ -1,0 +1,13 @@
+{
+    "name": "patrimoine/web-app",
+    "description": "Application web Inertia/Vue du patrimoine de l'Etat",
+    "type": "project",
+    "require": {
+        "php": "^8.3",
+        "inertiajs/inertia-laravel": "^2.0",
+        "laravel/framework": "^12.0"
+    },
+    "require-dev": {
+        "laravel/sail": "^1.0"
+    }
+}

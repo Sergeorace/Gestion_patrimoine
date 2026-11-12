@@ -1,0 +1,238 @@
+# =============================================================================
+# Plateforme de gestion du patrimoine de l'Etat togolais
+# docker-compose.yml - orchestrateur global (developpement)
+# Demarrage : docker compose up -d --build
+# =============================================================================
+
+x-laravel-service: &laravel-service
+  restart: unless-stopped
+  networks: [patrimoine-net]
+
+services:
+  # ---------------------------------------------------------------------------
+  # POSTGRESQL - une instance, une base logique par service
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: patrimoine-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-patrimoine}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD requis - voir .env.example}
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-patrimoine}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks: [patrimoine-net]
+
+  # ---------------------------------------------------------------------------
+  # MESSAGERIE - evenements metier asynchrones
+  # ---------------------------------------------------------------------------
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+    container_name: patrimoine-rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-patrimoine}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:?RABBITMQ_PASSWORD requis}
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    networks: [patrimoine-net]
+
+  # ---------------------------------------------------------------------------
+  # CACHE / FILES / SESSIONS
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: patrimoine-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    networks: [patrimoine-net]
+
+  # ---------------------------------------------------------------------------
+  # MICROS-SERVICES LARAVEL (un conteneur par service)
+  # ---------------------------------------------------------------------------
+  auth-service:
+    <<: *laravel-service
+    build: ./services/auth-service
+    container_name: patrimoine-auth
+    env_file: ./services/auth-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  organisation-service:
+    <<: *laravel-service
+    build: ./services/organisation-service
+    container_name: patrimoine-organisation
+    env_file: ./services/organisation-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  asset-service:
+    <<: *laravel-service
+    build: ./services/asset-service
+    container_name: patrimoine-asset
+    env_file: ./services/asset-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  movement-service:
+    <<: *laravel-service
+    build: ./services/movement-service
+    container_name: patrimoine-movement
+    env_file: ./services/movement-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+
+  inventory-service:
+    <<: *laravel-service
+    build: ./services/inventory-service
+    container_name: patrimoine-inventory
+    env_file: ./services/inventory-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  maintenance-service:
+    <<: *laravel-service
+    build: ./services/maintenance-service
+    container_name: patrimoine-maintenance
+    env_file: ./services/maintenance-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  valuation-service:
+    <<: *laravel-service
+    build: ./services/valuation-service
+    container_name: patrimoine-valuation
+    env_file: ./services/valuation-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  document-service:
+    <<: *laravel-service
+    build: ./services/document-service
+    container_name: patrimoine-document
+    env_file: ./services/document-service/.env
+    volumes:
+      - documents:/var/www/storage/app/documents
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  notification-service:
+    <<: *laravel-service
+    build: ./services/notification-service
+    container_name: patrimoine-notification
+    env_file: ./services/notification-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+
+  reporting-service:
+    <<: *laravel-service
+    build: ./services/reporting-service
+    container_name: patrimoine-reporting
+    env_file: ./services/reporting-service/.env
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+
+  # ---------------------------------------------------------------------------
+  # APPLICATION WEB (Inertia.js + Vue 3)
+  # ---------------------------------------------------------------------------
+  web-app:
+    build: ./frontend
+    container_name: patrimoine-web
+    restart: unless-stopped
+    env_file: ./frontend/.env
+    environment:
+      RUN_MIGRATIONS: "false"
+    volumes:
+      - frontend-storage:/var/www/html/storage
+    networks: [patrimoine-net]
+
+  # ---------------------------------------------------------------------------
+  # API GATEWAY - point d'entree unique (routage, JWT, rate limiting, TLS)
+  # ---------------------------------------------------------------------------
+  api-gateway:
+    image: nginx:1.27-alpine
+    container_name: patrimoine-gateway
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./docker/nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - web-app
+      - auth-service
+      - organisation-service
+      - asset-service
+      - movement-service
+      - inventory-service
+      - maintenance-service
+      - valuation-service
+      - document-service
+      - notification-service
+      - reporting-service
+    networks: [patrimoine-net]
+
+  # ---------------------------------------------------------------------------
+  # SAUVEGARDES PostgreSQL (planifiees)
+  # ---------------------------------------------------------------------------
+  db-backup:
+    image: postgres:16-alpine
+    container_name: patrimoine-backup
+    restart: unless-stopped
+    environment:
+      PGPASSWORD: ${DB_PASSWORD}
+      DB_USER: ${DB_USER:-patrimoine}
+    volumes:
+      - ./docker/scripts/backup.sh:/backup.sh:ro
+      - backups:/backups
+    entrypoint: ["/bin/sh", "-c", "apk add --no-cache bash && chmod +x /backup.sh && echo '0 2 * * * /backup.sh' | crontab - && crond -f -l 8"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    networks: [patrimoine-net]
+
+volumes:
+  pgdata:
+  rabbitmq-data:
+  redis-data:
+  documents:
+  backups:
+  frontend-storage:
+
+networks:
+  patrimoine-net:
+    driver: bridge

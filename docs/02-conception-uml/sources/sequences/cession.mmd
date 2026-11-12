@@ -1,0 +1,39 @@
+%% Diagramme de sequence - Sortie / cession d'un bien (CU-06)
+sequenceDiagram
+    autonumber
+    actor RS as Responsable structure
+    actor GC as Gestionnaire central
+    actor CM as Comptable matieres
+    participant W as web-app
+    participant G as api-gateway
+    participant M as movement-service
+    participant S as asset-service
+    participant V as valuation-service
+    participant DBm as movement_db
+    participant DBa as asset_db
+    participant D as document-service
+    participant N as notification-service
+
+    RS->>W: Demande de sortie (motif : reforme/cession/rebut/perte/vol/destruction)
+    W->>G: POST /api/v1/movements (type=sortie)
+    G->>M: Creation demande
+    M->>S: GET /api/v1/assets/{id}
+    S-->>M: Bien (etat, VNC)
+    M->>V: GET /api/v1/valorisations/{asset_id} (VNC pour PV)
+    V-->>M: Valeur nette comptable
+    M->>DBm: INSERT mouvement statut=En attente + motif_sortie
+    W->>D: Upload PV / titre / constat
+    D-->>W: document_id
+    M->>N: Notification au gestionnaire central
+    N-->>GC: Demande de sortie a valider
+    GC->>W: Valide la sortie
+    W->>G: POST /api/v1/movements/{id}/validate
+    G->>M: Validation
+    M->>DBm: UPDATE statut=Validee
+    M->>S: POST /api/v1/assets/{id}/sortie
+    S->>DBa: UPDATE asset : statut=Sorti (non modifiable RG-04)
+    M->>N: Evenement "bien sorti" (RabbitMQ)
+    N-->>CM: Notification pour ecriture comptable
+    N-->>RS: Confirmation sortie
+    M-->>G: 200 OK
+    G-->>W: Sortie executee et historisee

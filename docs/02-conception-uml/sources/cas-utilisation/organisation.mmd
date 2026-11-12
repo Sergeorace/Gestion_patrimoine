@@ -1,0 +1,25 @@
+%% Cas d'utilisation - Module Referentiel organisationnel (organisation-service)
+flowchart LR
+    subgraph Acteurs
+        ADMIN[Administrateur systeme]
+        GC[Gestionnaire central]
+        RS[Responsable de structure]
+        LECT[Lecteurs : invent./audit/decideur]
+    end
+
+    subgraph OrgService["organisation-service"]
+        CU03[CU-03 Gerer structures et sites]
+        CU03a[Creer / modifier l'organigramme]
+        CU03b[Gerer sites et localisations]
+        CU03c[Gerer les nomenclatures]
+        CU03d[Parametrer amortissement par categorie]
+    end
+
+    ADMIN --> CU03
+    GC --> CU03
+    RS --> CU03
+    LECT --> CU03
+    CU03 --> CU03a
+    CU03 --> CU03b
+    CU03 --> CU03c
+    CU03 --> CU03d

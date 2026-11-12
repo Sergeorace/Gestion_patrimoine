@@ -1,0 +1,15 @@
+%% Diagramme d'etats-transitions - Intervention de maintenance
+stateDiagram-v2
+    [*] --> Planifiee : creation plan preventif
+    Planifiee --> Alertee : echeance proche (notification)
+    Alertee --> EnCours : ordre d'intervention demarre
+    [*] --> Declaree : declaration de panne
+    Declaree --> EnCours : assignation agent/prestataire
+    EnCours --> EnAttentePieces : attente piece / prestataire
+    EnAttentePieces --> EnCours : reprise
+    EnCours --> Cloturee : compte-rendu + cout + PV
+    EnCours --> Annulee : annulation motivee
+    Cloturee --> [*] : historique + indicateurs fiabilite
+    Annulee --> [*]
+    Planifiee --> Reportee : report echeance
+    Reportee --> Alertee : nouvelle echeance

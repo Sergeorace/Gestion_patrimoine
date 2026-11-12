@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='900' viewBox='0 0 1440 900'>
+<rect width='1440' height='900' fill='#0B2545'/>
+<rect x='420.0' y='230.0' width='600' height='440' rx='14' fill='#FFFFFF'/>
+<rect x='420.0' y='230.0' width='600' height='8' rx='4' fill='#B8860B'/>
+<text x='720.0' y='290.0' font-size='24' fill='#0B2545' font-weight='800' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>PATERNITE</text>
+<text x='720.0' y='314.0' font-size='13' fill='#4B5563' font-weight='400' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Etat togolais - Gestion du patrimoine</text>
+<text x='480.0' y='370.0' font-size='13' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Adresse e-mail</text>
+<rect x='480.0' y='386.0' width='480' height='40' rx='6' fill='#F3F4F6' stroke='#D1D5DB' stroke-width='1'/>
+<text x='500.0' y='412.0' font-size='13' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>prenom.nom@institution.go.tg</text>
+<text x='480.0' y='450.0' font-size='13' fill='#111827' font-weight='600'font-family='Inter,Segoe UI,Arial,sans-serif'>Mot de passe</text>
+<rect x='480.0' y='466.0' width='480' height='40' rx='6' fill='#F3F4F6' stroke='#D1D5DB' stroke-width='1'/>
+<text x='500.0' y='492.0' font-size='13' fill='#6B7280' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>••••••••••••</text>
+<text x='920.0' y='492.0' font-size='14' fill='#111827' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>👁</text>
+<rect x='480.0' y='522.0' width='16' height='16' rx='3' fill='#FFFFFF' stroke='#1D4E89' stroke-width='1'/>
+<text x='504.0' y='535.0' font-size='12' fill='#4B5563' font-weight='400'font-family='Inter,Segoe UI,Arial,sans-serif'>Se souvenir de moi</text>
+<text x='940.0' y='535.0' font-size='12' fill='#1D4E89' font-weight='600' text-anchor='end'font-family='Inter,Segoe UI,Arial,sans-serif'>Mot de passe oublie ?</text>
+<rect x='480.0' y='554.0' width='480' height='44' rx='6' fill='#1D4E89'/>
+<text x='720.0' y='581.0' font-size='13' fill='#FFFFFF' font-weight='600' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>SE CONNECTER</text>
+<text x='720.0' y='650.0' font-size='11' fill='#6B7280' font-weight='400' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Authentification securisee - JWT + 2FA</text>
+<text x='720.0' y='940' font-size='13' fill='#93C5FD' font-weight='400' text-anchor='middle'font-family='Inter,Segoe UI,Arial,sans-serif'>Plateforme de gestion du patrimoine de l'Etat togolais</text>
+</svg>
